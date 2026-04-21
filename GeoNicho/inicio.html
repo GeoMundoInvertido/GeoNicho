@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GeoNicho — Página Inicial</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terra:  #6B3A1F;
+    --argila: #A0522D;
+    --ocre:   #C8833A;
+    --areia:  #E8D5B0;
+    --folha:  #3A5A2A;
+    --musgo:  #5C7A3E;
+    --ceu:    #4A7FA5;
+    --claro:  #7BA7C2;
+    --escuro: #2E5F7A;
+    --oceano: #1E4D6B;
+    --papel:  #F5EFE0;
+    --cinza:  #2C2C2C;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--papel);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--cinza);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(106,58,31,.04) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(106,58,31,.04) 40px);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* ══ HEADER ══ */
+  header {
+    position: relative;
+    background: linear-gradient(160deg, var(--terra) 0%, var(--argila) 60%, var(--ocre) 100%);
+    padding: 0 0 32px;
+    overflow: hidden;
+    border-bottom: 3px solid #6B3A1F;
+    z-index: 1;
+    margin-bottom: -25px;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px 0;
+  }
+
+  .badge-inst {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.75);
+  }
+
+  .icon-compass {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  .header-body { padding: 10px 24px 0; }
+
+  .header-pretitle {
+    display: inline-block;
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 11px;
+    color: rgba(255,255,255,.9);
+    letter-spacing: .06em;
+    margin-top: 14px;
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 6vw, 52px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.15;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,.2);
+  }
+
+  header h1 span { color: var(--areia); }
+
+  .header-desc {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(255,255,255,.75);
+    line-height: 1.6;
+    margin-top: 10px;
+    max-width: 480px;
+  }
+
+  /* ══ MAIN ══ */
+  .main-content {
+    position: relative;
+    z-index: 1;
+    padding: 32px 20px 0;
+  }
+
+  /* ══ DIVISOR ══ */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    margin-top: 13px;
+  }
+  
+  .divider-line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--ocre), transparent); }
+  .divider-icon { font-size: 16px; }
+
+  /* ══ SECTION LABEL (igual ao video-label) ══ */
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--argila);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--ocre);
+    opacity: .4;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 30px);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--terra);
+    margin-bottom: 4px;
+  }
+
+  .section-subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--argila);
+    margin-bottom: 20px;
+  }
+
+  /* ══ BOAS-VINDAS ══ */
+  .section-boas-vindas {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px 22px;
+    box-shadow: 0 2px 14px rgba(106,58,31,.1);
+    border-left: 4px solid var(--ocre);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-boas-vindas::before {
+    content: '🌍';
+    position: absolute;
+    top: -10px; right: 16px;
+    font-size: 72px;
+    opacity: .06;
+    pointer-events: none;
+  }
+
+  .boas-vindas-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--terra);
+    margin-bottom: 12px;
+  }
+
+  .boas-vindas-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #4a4a4a;
+  }
+
+  .boas-vindas-text + .boas-vindas-text {
+    margin-top: 10px;
+  }
+
+  /* ══ OBJETIVOS ══ */
+  .objetivos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .objetivo-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px 18px 18px 20px;
+    border-left: 4px solid var(--ocre);
+    box-shadow: 0 2px 14px rgba(106,58,31,.08);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .objetivo-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(106,58,31,.15); }
+  .objetivo-card.verde { border-left-color: var(--musgo); }
+  .objetivo-card.azul  { border-left-color: var(--ceu); }
+
+  .objetivo-emoji {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .objetivo-card h3 {
+    font-family: 'Lora', serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--terra);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .objetivo-card.verde h3 { color: var(--folha); }
+  .objetivo-card.azul  h3 { color: var(--escuro); }
+
+  .objetivo-card p {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #5a5a5a;
+  }
+
+    .btn-saiba {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--argila);
+    transition: gap .2s;
+  }
+  .btn-saiba:hover { gap: 10px; }
+
+  /* ══ LISTA DE NICHOS ══ */
+  .nichos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+/* ── tons de verde para os 9 nichos ── */
+.nicho-card.n09          { --cor-nicho: #2A4A1E; }
+.nicho-card.n08      { --cor-nicho: #335A24; }
+.nicho-card.n07      { --cor-nicho: #3D6B2A; }
+.nicho-card.n06      { --cor-nicho: #477C30; }
+.nicho-card.n05      { --cor-nicho: #528D36; }
+.nicho-card.n04      { --cor-nicho: #5E9E3E; }
+.nicho-card.n03      { --cor-nicho: #6DAF48; }
+.nicho-card.n02      { --cor-nicho: #80C054; }
+.nicho-card      { --cor-nicho: #96D162; }
+
+.nicho-card {
+  background: #fff; /* sem gradiente por padrão */
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 14px rgba(106,58,31,.08);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid transparent;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.nicho-card::before {
+  content: attr(data-num);
+  position: absolute;
+  top: -8px; right: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: rgba(200,131,58,.07);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.nicho-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(106,58,31,.18);
+  border-color: var(--cor-nicho); /* borda só no hover */
+}
+
+/* ── apenas o quadrado do número muda de cor ── */
+.nicho-numero {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--cor-nicho), color-mix(in srgb, var(--cor-nicho) 70%, black));
+  box-shadow: 0 3px 10px color-mix(in srgb, var(--cor-nicho) 40%, transparent);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 900;
+  padding-bottom: 6px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* ── tag e título voltam às cores originais ── */
+.nicho-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--argila); /* cor original */
+  margin-bottom: 4px;
+}
+
+.nicho-info h3 {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--terra); /* cor original */
+  line-height: 1.3;
+}
+
+  /* ══ COMO FUNCIONA ══ */
+  .como-funciona-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  /* linha conectora */
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 44px;
+    width: 2px;
+    height: calc(100% - 12px);
+    background: linear-gradient(to bottom, var(--ocre), transparent);
+    opacity: .3;
+  }
+
+  .step-num {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--ocre), var(--argila));
+    display: flex; 
+    justify-content: center;
+    padding-top: 6px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(200,131,58,.3);
+  }
+
+  .step-body {
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    flex: 1;
+    box-shadow: 0 2px 10px rgba(106,58,31,.08);
+  }
+
+  .step-body h3 {
+    font-family: 'Lora', serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--terra);
+    margin-bottom: 4px;
+  }
+
+  .step-body p {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #5a5a5a;
+  }
+
+  /* ══ INSTAGRAM ══ */
+  .section-instagram {
+    position: relative;
+    z-index: 1;
+  }
+
+  .insta-inner {
+    background: var(--papel);
+    border: 2px solid var(--areia);
+    border-radius: 24px;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(106,58,31,.1);
+  }
+
+  .insta-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .insta-icon {
+    background: linear-gradient(135deg, var(--ocre), var(--argila));
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(200,131,58,.3);
+  }
+
+  .insta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--terra);
+    line-height: 1.1;
+  }
+
+  .insta-handle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--argila);
+    margin-top: 2px;
+    letter-spacing: .03em;
+  }
+
+  .insta-desc {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 13.5px;
+    color: #252525;
+    line-height: 1.7;
+  }
+
+  .btn-instagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    background: var(--argila);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(106,58,31,.25);
+    transition: transform .2s, box-shadow .2s;
+    letter-spacing: .03em;
+  }
+  .btn-instagram:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(106,58,31,.3); }
+  .btn-instagram:active { transform: scale(.96); }
+
+  /* ══ FOOTER ══ */
+  footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+    background: var(--terra);
+    padding: 28px 24px 28px;
+    text-align: center;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .logo-footer {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--areia);
+    letter-spacing: .04em;
+    margin-bottom: 5px;
+  }
+
+  footer p { font-size: 11.5px; color: rgba(232,213,176,.6); line-height: 1.7; }
+
+  /* ══ ANIMAÇÕES ══ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  header           { animation: fadeUp .5s ease both; }
+  .main-content    { animation: fadeUp .5s .1s ease both; }
+
+  /* ══ TABLET ≥ 640px ══ */
+  @media (min-width: 640px) {
+    .main-content { padding: 36px 40px 0; }
+    .objetivos-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ══ DESKTOP ≥ 1024px ══ */
+  @media (min-width: 1024px) {
+    .header-top  { padding: 22px 60px 12px; }
+    .header-body { padding: 4px 60px 36px; }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4px 60px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 60px;
+      align-items: start;
+    }
+
+    /* Coluna esquerda: boas-vindas + objetivos */
+    .col-esquerda {
+      grid-column: 1;
+      display: flex;
+      position: relative;
+      top: -8px;
+      margin-top: -15px;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .col-esquerda-2 {
+      grid-column: 1;
+      display: flex;
+      position: relative;
+      top: -8px;
+      margin-top: -15px;
+      flex-direction: column;
+      gap: 0;
+      margin-top: -500px;
+    }
+
+    .divider { margin: 25px 0; margin-top: 13px}
+
+    .nicho-info h3 { font-size: 20px;}
+
+    /* Coluna direita: nichos + como funciona + instagram */
+    .col-direita {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      margin-top: -23px;
+      gap: 0;
+    }
+
+    .objetivos-grid { grid-template-columns: 1fr; }
+
+    footer .footer-inner {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  /* ══ WIDE ≥ 1400px ══ */
+  @media (min-width: 1400px) {
+    .main-content { max-width: 1400px; padding: 56px 80px 0; column-gap: 80px; }
+    footer { padding: 32px 80px 44px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-top">
+    <span class="badge-inst">Universidade Federal de Alagoas · Geografia</span>
+    <div class="icon-compass">🧭</div>
+  </div>
+  <div class="header-body">
+    <h1>Geo<span>Nicho</span></h1>
+    <p class="header-desc">Explore objetos, curiosidades e saberes geográficos espalhados pelo corredor da faculdade.</p>
+  </div>
+</header>
+
+<!-- ══ CONTEÚDO PRINCIPAL ══ -->
+<div class="main-content">
+
+  <!-- ── COLUNA ESQUERDA ── -->
+  <div class="col-esquerda">
+
+    <!-- Boas-vindas -->
+    <div class="section-label">👋 Bem-vindo</div>
+    <section class="section-boas-vindas">
+      <h2 class="boas-vindas-title">O que é o GeoNicho?</h2>
+      <p class="boas-vindas-text">
+        O GeoNicho é um projeto de extensão do curso de Geografia da Universidade Federal de Alagoas (UFAL) que transforma o corredor da faculdade em um espaço de aprendizado interativo.
+      </p>
+      <p class="boas-vindas-text">
+        Cada nicho do corredor reúne objetos cuidadosamente selecionados para representar uma ou mais vertentes da geografia. Ao escanear o QR Code de cada nicho, você acessa vídeos explicativos e curiosidades sobre os objetos expostos e as disciplinas que eles representam.
+      </p>
+      <button class="btn-saiba">Saiba mais sobre o projeto →</button>
+    </section>
+
+
+    <!-- Objetivos -->
+    <div class="section-label">🎯 Objetivos</div>
+    <h2 class="section-title">O que buscamos</h2>
+    <p class="section-subtitle">As metas que guiam o projeto</p>
+
+    <div class="objetivos-grid">
+
+      <div class="objetivo-card" >
+        <div class="objetivo-emoji">📚</div>
+        <div>
+          <h3>Popularizar a geografia</h3>
+          <p>Aproximar os saberes geográficos do cotidiano de quem frequenta o espaço, de forma leve e acessível.</p>
+        </div>
+      </div>
+
+      <div class="objetivo-card verde">
+        <div class="objetivo-emoji">🔗</div>
+        <div>
+          <h3>Conectar teoria e prática</h3>
+          <p>Mostrar como objetos do dia a dia se relacionam com conceitos das diferentes vertentes da geografia.</p>
+        </div>
+      </div>
+
+      <div class="objetivo-card azul">
+        <div class="objetivo-emoji">🤝</div>
+        <div>
+          <h3>Integrar a comunidade</h3>
+          <p>Criar um espaço de encontro entre estudantes, professores e visitantes em torno do conhecimento geográfico.</p>
+        </div>
+      </div>
+
+      <div class="objetivo-card">
+        <div class="objetivo-emoji">📲</div>
+        <div>
+          <h3>Usar a tecnologia a favor</h3>
+          <p>Aproveitar QR Codes e dispositivos móveis para tornar a experiência interativa e moderna.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /col-esquerda -->
+
+  <!-- ── COLUNA DIREITA ── -->
+  <div class="col-direita">
+
+    <!-- Nichos -->
+    <div class="section-label">📍 Nichos</div>
+    <h2 class="section-title">Os Nichos</h2>
+    <p class="section-subtitle">Clique em um nicho para acessar seu conteúdo</p>
+
+    <div class="nichos-lista">
+
+      <a href="nicho_1_pensamentogeo.html" class="nicho-card"     data-num="01">
+        <div class="nicho-numero">01</div>
+        <div class="nicho-info">
+          <h3>História do Pensamento Geográfico</h3>
+        </div>
+      </a>
+
+      <a href="nicho_2_carto_topo.html" class="nicho-card n02" data-num="02">
+        <div class="nicho-numero">02</div>
+        <div class="nicho-info">
+          <h3>Cartografia e Topografia</h3>
+        </div>
+      </a>
+
+      <a href="nicho_3_quant.html" class="nicho-card n03" data-num="03">
+        <div class="nicho-numero">03</div>
+        <div class="nicho-info">
+          <h3>Geoestatística e Quantificação</h3>
+        </div>
+      </a>
+
+      <a href="nicho_4_economica.html" class="nicho-card n04" data-num="04">
+        <div class="nicho-numero">04</div>
+        <div class="nicho-info">
+          <h3>Geografia Econômica e Formação Econômica e Territorial do Brasil</h3>
+        </div>
+      </a>
+
+      <a href="nicho_5_urbana_alagoas.html" class="nicho-card n05" data-num="05">
+        <div class="nicho-numero">05</div>
+        <div class="nicho-info">
+          <h3>Geografia Urbana e Geografia de Alagoas</h3>
+        </div>
+      </a>
+
+      <a href="nicho_6_solos.html" class="nicho-card n06" data-num="06">
+        <div class="nicho-numero">06</div>
+        <div class="nicho-info">
+          <h3>Geologia, Geografia dos Solos e Biogeografia</h3>
+        </div>
+      </a>
+
+      <a href="nicho_7_clima_hidro.html" class="nicho-card n07" data-num="07">
+        <div class="nicho-numero">07</div>
+        <div class="nicho-info">
+          <h3>Climatologia, Hidrografia e Geomorfologia</h3>
+        </div>
+      </a>
+
+      <a href="nicho_8_ensino_cientifico.html" class="nicho-card n08" data-num="08">
+        <div class="nicho-numero">08</div>
+        <div class="nicho-info">
+          <h3>Ensino Científico</h3>
+        </div>
+      </a>
+
+      <a href="nicho_9_pesquisa.html" class="nicho-card n09" data-num="09">
+        <div class="nicho-numero">09</div>
+        <div class="nicho-info">
+          <h3>Ensino - Pesquisa</h3>
+        </div>
+      </a>
+
+
+    </div>
+
+    <!-- Como funciona -->
+    <div class="section-label">❓ Como participar</div>
+    <h2 class="section-title">Explorando o corredor</h2>
+    <p class="section-subtitle">São três passos simples</p>
+
+    <div class="como-funciona-steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Encontre um nicho no corredor</h3>
+          <p>Procure os nichos espalhados pelo corredor da faculdade — cada um tem uma placa identificadora.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Escaneie o QR Code</h3>
+          <p>Use a câmera do seu celular para escanear o QR Code fixado no nicho e seja direcionado ao conteúdo.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Explore o conteúdo</h3>
+          <p>Assista ao vídeo explicativo e leia as curiosidades sobre o objeto e as disciplinas que ele representa.</p>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+<div class="col-esquerda-2">
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-icon">📸</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Instagram -->
+    <section class="section-instagram">
+      <div class="insta-inner">
+        <div class="insta-top">
+          <div class="insta-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="white">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="insta-title">Siga o Projeto</h2>
+            <p class="insta-handle">@geo.mundoinvertido</p>
+          </div>
+        </div>
+        <p class="insta-desc">Acompanhe os bastidores, novidades dos nichos e conteúdos exclusivos sobre Geografia no nosso Instagram.</p>
+        <a href="https://www.instagram.com/geo.mundoinvertido" target="_blank" class="btn-instagram">
+          Seguir no Instagram
+        </a>
+      </div>
+    </section>
+  </div>
+
+ <!-- /col-direita -->
+
+</div><!-- /main-content -->
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="logo-footer">GeoNicho</div>
+      <p>Projeto de extensão · Curso de Geografia · UFAL</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
