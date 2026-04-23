@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HLXK630WR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1HLXK630WR');
+</script>
+
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="manifest" href="site.webmanifest"> 
+<title>GeoNicho — Página Inicial</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+<script data-goatcounter="https://geomundoinvertido.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+<style>
+  :root {
+    --terra:  #6B3A1F;
+    --argila: #A0522D;
+    --ocre:   #C8833A;
+    --areia:  #E8D5B0;
+    --folha:  #3A5A2A;
+    --musgo:  #5C7A3E;
+    --ceu:    #4A7FA5;
+    --claro:  #7BA7C2;
+    --escuro: #2E5F7A;
+    --oceano: #1E4D6B;
+    --papel:  #F5EFE0;
+    --cinza:  #2C2C2C;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--papel);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--cinza);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(106,58,31,.04) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(106,58,31,.04) 40px);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* ══ HEADER ══ */
+  header {
+    position: relative;
+    background: linear-gradient(160deg, var(--terra) 0%, var(--argila) 60%, var(--ocre) 100%);
+    padding: 0 0 30px;
+    overflow: hidden;
+    border-bottom: 3px solid #6B3A1F;
+    z-index: 1;
+    margin-bottom: -25px;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px 0;
+  }
+
+  .badge-inst {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.75);
+  }
+
+  .icon-compass {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  .header-body { padding: 10px 24px 0; }
+
+  .header-pretitle {
+    display: inline-block;
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 11px;
+    color: rgba(255,255,255,.9);
+    letter-spacing: .06em;
+    margin-top: 14px;
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 6vw, 52px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.15;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,.2);
+  }
+
+  header h1 span { color: var(--areia); }
+
+  .header-desc {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(255,255,255,.75);
+    line-height: 1.6;
+    margin-top: 10px;
+    max-width: 480px;
+  }
+
+  /* ══ MAIN ══ */
+  .main-content {
+    position: relative;
+    z-index: 1;
+    padding: 32px 20px 0;
+  }
+
+
+  /* ══ SECTION LABEL (igual ao video-label) ══ */
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--argila);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--ocre);
+    opacity: .4;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 30px);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--terra);
+    margin-bottom: 4px;
+  }
+
+  .section-subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--argila);
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 700;
+    color: var(--terra);
+    margin-top: 5px;
+  }
+
+.text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--terra);
+  margin-top: -5px;
+  /* remova o cursor: pointer daqui */
+}
+
+.text a {
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline; /* garante que só o texto é clicável */
+}
+
+.text a:hover {
+  color: var(--argila);
+}
+
+  /* ══ FOOTER ══ */
+  footer {
+    z-index: 1;
+    margin-top: 40px;
+    background: var(--terra);
+    padding: 28px 24px 40px;
+    text-align: center;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .logo-footer {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--areia);
+    letter-spacing: .04em;
+    margin-bottom: 5px;
+  }
+
+  footer p { font-size: 11.5px; color: rgba(232,213,176,.6); line-height: 1.7; }
+
+  /* ══ ANIMAÇÕES ══ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  header           { animation: fadeUp .5s ease both; }
+  .main-content    { animation: fadeUp .5s .1s ease both; }
+
+  /* ══ TABLET ≥ 640px ══ */
+  @media (min-width: 640px) {
+    .main-content { padding: 36px 40px 0; }
+    .objetivos-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ══ DESKTOP ≥ 1024px ══ */
+  @media (min-width: 1024px) {
+    .header-top  { padding: 22px 60px 12px; }
+    .header-body { padding: 4px 60px 36px; }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4px 60px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 60px;
+      align-items: start;
+    }
+
+    /* Coluna esquerda: boas-vindas + objetivos */
+    .col-esquerda {
+      grid-column: 1;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      gap: 0;
+    }
+
+
+    .divider { margin: 25px 0; margin-top: 13px}
+
+    .nicho-info h3 { font-size: 20px;}
+
+    /* Coluna direita: nichos + como funciona + instagram */
+    .col-direita {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      margin-top: -23px;
+      gap: 0;
+    }
+
+    .objetivos-grid { grid-template-columns: 1fr; }
+
+    footer .footer-inner {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  /* ══ WIDE ≥ 1400px ══ */
+  @media (min-width: 1400px) {
+    .main-content { max-width: 1400px; padding: 56px 80px 0; column-gap: 80px; }
+    footer { padding: 32px 80px 44px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-top">
+    <span class="badge-inst">Universidade Federal de Alagoas · Geografia</span>
+    <div class="icon-compass">🧭</div>
+  </div>
+  <div class="header-body">
+    <h1>MAPA<span> DO SITE</span></h1>
+  </div>
+</header>
+
+<!-- ══ CONTEÚDO PRINCIPAL ══ -->
+<div class="main-content">
+
+  <!-- ── COLUNA ESQUERDA ── -->
+  <div class="col-esquerda">
+    <div class="title">INÍCIO</div>
+    <div class="text"><a href="index.html">Página Inicial</a></div>
+
+    <div class="title">EXPLORE OS NICHOS</div>
+    <div class="text"><a href="nicho_1_pensamentogeo.html">Nicho 1</a></div>
+    <div class="text"><a href="nicho_2_carto_topo.html">Nicho 2</a></div>
+    <div class="text"><a href="nicho_3_quant.html">Nicho 3</a></div>
+    <div class="text"><a href="nicho_4_economica.html">Nicho 4</a></div>
+    <div class="text"><a href="nicho_5_urbana_alagoas.html">Nicho 5</a></div>
+    <div class="text"><a href="nicho_6_solos.html">Nicho 6</a></div>
+    <div class="text"><a href="nicho_7_clima_hidro.html">Nicho 7</a></div> 
+    <div class="text"><a href="nicho_8_ensino_cientifico.html">Nicho 8</a></div>
+    <div class="text"><a href="nicho_9_pesquisa.html">Nicho 9</a></div>
+
+    <div class="title">SAIBA MAIS</div>
+    <div class="text"><a href="sobreprojeto.html">Sobre o Projeto</a></div>
+
+    <div class="title">SIGA NOSSO INSTAGRAM!</div>
+    <div class="text"><a href="https://www.instagram.com/geo.mundoinvertido" target="_blank">Instagram</a></div>
+
+  </div><!-- /col-esquerda -->
+
+
+</div><!-- /main-content -->
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="logo-footer">GeoNicho</div>
+      <p>Projeto de extensão · Curso de Geografia · UFAL</p>
+      <p>Desenvolvido por estudantes do curso de Geografia</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
