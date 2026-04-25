@@ -173,6 +173,26 @@
     opacity: .4;
   }
 
+    .section-label1 {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--argila);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label1::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--ocre);
+    opacity: .4;
+  }
+
   .section-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(20px, 4vw, 30px);
@@ -377,6 +397,95 @@
   }
   .btn-instagram:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(106,58,31,.3); }
   .btn-instagram:active { transform: scale(.96); }
+
+ /* ── EXPLORE OUTROS NICHOS ── */
+  .section-explore {
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    padding: 0 20px;
+  }
+
+  .explore-inner {
+    background: linear-gradient(135deg, var(--folha) 0%, var(--musgo) 100%);
+    border-radius: 24px;
+    padding: 32px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 32px rgba(106,58,31,.2);
+  }
+
+  .explore-icon {
+    font-size: 36px;
+    background: rgba(255,255,255,.15);
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .explore-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 900;
+    color: #fff;
+  }
+
+  .explore-desc {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    line-height: 1.7;
+    max-width: 340px;
+  }
+
+  .explore-dica {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 14px;
+    padding: 12px 16px;
+    text-align: left;
+    max-width: 340px;
+  }
+
+  .explore-dica span { font-size: 18px; flex-shrink: 0; }
+
+  .explore-dica p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.945);
+    line-height: 1.6;
+  }
+
+  .btn-inicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 14px 28px;
+    background: var(--escuro);
+    color: #ffff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    transition: transform .2s, box-shadow .2s;
+  }
+
+  .btn-inicio:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  }
+
+  .btn-inicio:active { transform: scale(.96); }
 
   /* ══ FOOTER ══ */
   footer {
@@ -611,22 +720,12 @@
     .col-esquerda {
       grid-column: 1;
       display: flex;
-      position: relative;
-      top: -8px;
-      margin-top: -15px;
+      top: -5px;
+      margin-top: -23px;
       flex-direction: column;
       gap: 0;
-    }
-
-    .col-esquerda-2 {
-      grid-column: 1;
-      display: flex;
-      position: relative;
-      top: -8px;
-      margin-top: -15px;
-      flex-direction: column;
-      gap: 0;
-      margin-top: -500px;
+      position: sticky;
+      align-self: start;
     }
 
     .divider { margin: 25px 0; margin-top: 13px}
@@ -649,6 +748,12 @@
       justify-content: center;
     }
   }
+
+    .section-explore {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
 
   /* ══ WIDE ≥ 1400px ══ */
   @media (min-width: 1400px) {
@@ -679,7 +784,7 @@
   <div class="col-esquerda">
 
     <!-- Bem-vindo + Carrossel -->
-    <div class="section-label">Bem-vindo!</div>
+    <div class="section-label1">Bem-vindo!</div>
 
     <!-- Carrossel -->
     <div class="carousel-wrapper">
@@ -775,11 +880,42 @@
 
     <div style="margin-top:20px"></div>
 
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-icon">🗺️</span>
+    <div class="divider-line"></div>
+  </div>
+
+
+ <section class="section-explore">
+    <div class="explore-inner">
+
+      <div class="explore-icon">🔎</div>
+
+      <h2 class="explore-title">Explore o Corredor!</h2>
+      <p class="explore-desc">
+        Cada nicho ao longo do corredor esconde objetos, histórias e curiosidades
+        da geografia. Procure as placas e escaneie os QR Codes!
+      </p>
+
+      <div class="explore-dica">
+        <span>💡</span>
+        <p>Você também pode acessar os nichos diretamente da página inicial do site.</p>
+      </div>
+
+      <a href="index.html" class="btn-inicio">
+        Ver página inicial
+      </a>
+
+    </div>
+  </section>
+
      <div class="divider">
       <div class="divider-line"></div>
       <span class="divider-icon">📸</span>
       <div class="divider-line"></div>
     </div>
+
 
     <!-- Instagram -->
     <section class="section-instagram">
