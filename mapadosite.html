@@ -49,6 +49,8 @@
     color: var(--cinza);
     min-height: 100vh;
     overflow-x: hidden;
+    display: flex;              /* adicione */
+    flex-direction: column; 
   }
 
   body::before {
@@ -209,7 +211,7 @@
   /* ══ FOOTER ══ */
   footer {
     z-index: 1;
-    margin-top: 40px;
+    margin-top: auto;
     background: var(--terra);
     padding: 28px 24px 40px;
     text-align: center;
