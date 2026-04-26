@@ -562,7 +562,106 @@
   color: var(--papel);
 }
 
-  /* ══ ANIMAÇÕES ══ */
+/* ══ BANNER DE COOKIES ══ */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 480px;
+  background: var(--terra);
+  border-radius: 20px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.25);
+  z-index: 9999;
+  animation: slideUp .4s ease both;
+}
+
+.cookie-banner.hiding {
+  animation: slideDown .4s ease both;
+}
+
+.cookie-texto-tit {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.6;
+  margin-bottom: -9px;
+  margin-top: -8px;
+  text-align: center;
+}
+
+.cookie-texto-tit strong {
+  font-style: normal;
+  color: var(--areia);
+  font-family: 'Playfair Display', serif;
+}
+
+.cookie-texto-sub {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 12px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.cookie-texto-sub strong {
+  font-style: normal;
+  color: var(--areia);
+  font-family: 'Playfair Display', serif;
+}
+
+.cookie-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-aceitar {
+  flex: 1;
+  padding: 10px;
+  background: var(--areia);
+  color: var(--terra);
+  border: none;
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-aceitar:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,.2); }
+.btn-aceitar:active { transform: scale(.96); }
+
+.btn-recusar {
+  padding: 10px 16px;
+  background: rgba(255,255,255,.12);
+  color: rgba(255,255,255,.7);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn-recusar:hover { background: rgba(255,255,255,.2); }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 1; transform: translateX(-50%) translateY(0); }
+  to   { opacity: 0; transform: translateX(-50%) translateY(20px); }
+}
+
+/* ══ ANIMAÇÕES ══ */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(22px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -642,8 +741,8 @@
 
 </style>
 </head>
-<body>
 
+<body>
 <!-- ══ HEADER ══ -->
 <header>
   <div class="header-top">
@@ -863,6 +962,15 @@
 
 </div><!-- /main-content -->
 
+<!-- ══ BANNER DE COOKIES ══ -->
+<div class="cookie-banner" id="cookie-banner">
+  <p class="cookie-texto-tit"> <strong>🍪 Esse site usa Cookies</strong></p>
+ <p class="cookie-texto-sub">Usamos o Google Analytics para registrar visitas e entender o acesso aos nichos. <br> Os dados coletados serão usados apenas para fins acadêmicos no projeto de extensão da UFAL.</p>
+  <div class="cookie-btns">
+    <button class="btn-aceitar" onclick="aceitarCookies()">Entendido</button>
+  </div>
+</div>
+
 <!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-inner">
@@ -874,6 +982,31 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const banner = document.getElementById('cookie-banner');
+  if (localStorage.getItem('cookies')) {
+    banner.style.display = 'none';
+  }
+
+  function aceitarCookies() {
+    localStorage.setItem('cookies', 'aceito');
+    fecharBanner();
+    // Aqui você pode inicializar o Google Analytics após aceite
+  }
+
+  function recusarCookies() {
+    localStorage.setItem('cookies', 'recusado');
+    fecharBanner();
+  }
+
+  function fecharBanner() {
+    banner.classList.add('hiding');
+    banner.addEventListener('animationend', () => {
+      banner.style.display = 'none';
+    }, { once: true });
+  }
+</script>
 
 </body>
 </html>
