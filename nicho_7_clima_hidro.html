@@ -95,6 +95,19 @@
     font-size: 18px;
   }
 
+    .nicho-numero-header {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,.15);
+  border: 2px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  flex-shrink: 0;
+}
+
   .header-body { padding: 0px 24px 0px; }
 
   header h1 {
@@ -225,7 +238,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin: 32px 0;
+    margin: 20px 0;
   }
   .divider-line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--ocre), transparent); }
   .divider-icon { font-size: 16px; }
@@ -384,6 +397,7 @@
     padding: 12px 16px;
     text-align: left;
     max-width: 340px;
+    align-items: center;
   }
 
   .explore-dica span { font-size: 18px; flex-shrink: 0; }
@@ -548,6 +562,20 @@
 
   footer p { font-size: 11.5px; color: rgba(232,213,176,.6); line-height: 1.7; }
 
+  .footer-inner a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+  .footer-inner a:hover {
+  color: var(--papel);
+}
+
+  .footer-inner a {
+  color: inherit;
+  text-decoration: underline;
+}
+
   /* ── ANIMAÇÕES ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(22px); }
@@ -603,6 +631,10 @@
       grid-column: 2;
     }
 
+.divider-curiosidades {
+      margin-top: -19px;
+    }    
+
     /* Dá um respiro pro primeiro divisor não colar muito no topo */
     .divider:first-of-type {
       margin-top: -5px;
@@ -631,11 +663,10 @@
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
 <header>
   <div class="header-top">
     <span class="badge-inst">Universidade Federal de Alagoas · Geografia</span>
-    <div class="icon-compass">🧭</div>
+    <div class="nicho-numero-header">7</div>
   </div>
   <div class="header-body">
     <h1>Climatologia, Hidrografia e<br><span>Geomorfologia</h1>
@@ -678,14 +709,29 @@
   <!-- Divisor -->
   <div class="divider-curiosidades">
     <div class="divider-line"></div>
-    <span class="divider-icon">🌍</span>
+    <span class="divider-icon">
+      <div class="insta-icon">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 490 490" 
+    width="30" height="30"
+    fill="white">
+    <g>
+      <g>
+        <path d="m245,0c-135.5,0-245,109.5-245,245s109.5,245 245,245 245-109.5 245-245-109.5-245-245-245zm0,20.9c12.1,0 23.9,1 35.5,2.8l-22.6,39.4-86.1,41.1-34.1,23.9-101,33.9c32.9-82.8 113.6-141.1 208.3-141.1zm142,397.6c-38.6,31.6-88.1,50.6-142.1,50.6-124,0-224-100-224-224.1 0-20 2.6-39.4 7.5-57.8l119-39.9 35.2-24.6 90.4-43.3 29.3-51.2c14.3,3.7 28,8.9 40.9,15.2v36.3l-24.7,38.6v48.9l-35.2,80.2 30.3,40.5h73.4v130.6zm21.3-19.8v-132h-84l-16.5-22.1 32-72.9v-47.2l24.7-38.5v-30.8c62.9,39.6 104.6,109.7 104.6,189.8 0,59.6-23.1,113.6-60.8,153.7z"/>
+        <path d="m133.4,214.7l-41.8,39.7v34.3l38.2,66 22,79 77.8-17.1 14.6-50.1 21.8-30v-52.8l-46.2-9.7-86.4-59.3zm111.5,115h-0.1l-19.9,27.3-12.1,41.6-45.9,10.1-17.4-62.3-36.7-63.4v-19.5l22.8-21.6 75.8,52 33.5,7 0,28.8z"/>
+      </g>
+    </g>
+  </svg>
+</div>
+    </span>
     <div class="divider-line"></div>
   </div>
+  
 
   <!-- Curiosidades -->
   <section class="section-curiosidades">
     <h2 class="section-title">Curiosidades</h2>
-    <p class="section-subtitle">Saiba mais sobre este objeto e seu papel na geografia</p>
+    <p class="section-subtitle">Saiba mais sobre este nicho e seu papel na Geografia</p>
 
     <div class="cards-grid">
 
@@ -697,7 +743,7 @@
       </div>
 
       <div class="card-curiosidade verde" data-num="02">
-        <div class="card-tag">🌿 Biogeografia</div>
+        <div class="card-tag">🌿 BioGeografia</div>
         <h3>A distribuição dos seres vivos conta a história do relevo</h3>
         <p>Maecenas non purus ut sapien rhoncus pharetra sit amet id leo. Nunc ac nisl dictum, commodo leo nec, convallis ante. Quisque pulvinar venenatis hendrerit.</p>
         <button class="btn-saiba">Aprofundar leitura →</button>
@@ -714,29 +760,41 @@
   </section>
 
   <!-- Divisor -->
-  <div class="divider">
-    <div class="divider-line"></div>
-    <span class="divider-icon">🗺️</span>
-    <div class="divider-line"></div>
-  </div>
+<div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-icon">
+        <div class="insta-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="white">
+          <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9a.5.5 0 0 0-.36.48V20.5a.5.5 0 0 0 .5.5l.16-.03L9 18.9l6 2.1 5.64-1.9a.5.5 0 0 0 .36-.48V3.5a.5.5 0 0 0-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/>
+        </svg>
+        </div>
+      </span>
+      
+      <div class="divider-line"></div>
+    </div>
+    
 
   <!-- ══ SEÇÃO: EXPLORE OUTROS NICHOS ══ -->
-  <section class="section-explore">
+ <section class="section-explore">
     <div class="explore-inner">
-
-      <div class="explore-icon">🔎</div>
 
       <h2 class="explore-title">Explore o Corredor!</h2>
       <p class="explore-desc">
         Cada nicho ao longo do corredor esconde objetos, histórias e curiosidades
-        da geografia. Procure as placas e escaneie os QR Codes!
+        da Geografia. Procure as placas e escaneie os QR Codes!
       </p>
 
       <div class="explore-dica">
-        <span>💡</span>
-        <p>Você também pode acessar os nichos diretamente da página inicial do site.</p>
-      </div>
-
+  <span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114.98 122.88" width="45" height="45">
+      <style>.st0{fill:#F4BB2C;}.st1{fill:#5C546A;}</style>
+      <path class="st1" d="M68.72,116.34c-1.22,2.09-2.9,3.72-4.82,4.83c-1.71,1-3.62,1.57-5.53,1.69c-1.94,0.12-3.9-0.25-5.69-1.11 c-1.22-0.6-2.36-1.43-3.37-2.51L68.72,116.34L68.72,116.34L68.72,116.34z M71.41,95.83l-0.63,2.95l-0.16,2.1l-25.33,3.77 c-0.09-1.51-0.33-3.14-0.71-4.83L71.41,95.83L71.41,95.83L71.41,95.83z M70.57,105.48l0.02,1.27l0.03,0.44 c0.07,0.83,0.08,1.67,0.03,2.5l-0.38,1.83l-23.52,3.5l-0.41-0.94l-0.92-3.76l-0.02-1.09L70.57,105.48L70.57,105.48L70.57,105.48z"/>
+      <path d="M56.76,3.84c0.03-1.09,0.49-2.06,1.22-2.75c0.71-0.68,1.69-1.09,2.75-1.08V0c0.09,0,0.18,0.01,0.27,0.02 c0.99,0.08,1.88,0.53,2.52,1.2c0.68,0.71,1.09,1.68,1.08,2.75h0.01c0,0.07,0,0.14-0.01,0.2l-0.21,8.37l0.01,0 c0,0.09-0.01,0.18-0.02,0.27c-0.08,1-0.53,1.88-1.2,2.52c-0.72,0.68-1.69,1.09-2.75,1.08v0.01c-0.09,0-0.18-0.01-0.27-0.02 c-1-0.08-1.88-0.53-2.52-1.2c-0.68-0.72-1.09-1.69-1.08-2.75l-0.01,0c0-0.07,0-0.14,0.01-0.2L56.76,3.84L56.76,3.84L56.76,3.84z M14.26,18.5c-0.79-0.74-1.21-1.73-1.25-2.73c-0.04-1,0.31-2.02,1.04-2.81c0.74-0.79,1.73-1.21,2.73-1.25 c1-0.04,2.02,0.31,2.81,1.04l6.28,5.85c0.79,0.74,1.21,1.73,1.25,2.73c0.04,1.01-0.31,2.02-1.04,2.81 c-0.74,0.79-1.73,1.21-2.73,1.25c-1.01,0.04-2.02-0.31-2.81-1.04L14.26,18.5L14.26,18.5L14.26,18.5z M3.99,61.66 c-1.06,0.02-2.03-0.39-2.75-1.06c-0.73-0.69-1.2-1.65-1.24-2.74c-0.04-1.08,0.37-2.08,1.06-2.81c0.69-0.73,1.65-1.2,2.74-1.23 l8.57-0.29c1.08-0.04,2.08,0.37,2.81,1.06c0.73,0.69,1.2,1.65,1.23,2.74v0.06h0.01l-0.01,0.14c-0.02,1.01-0.42,1.92-1.06,2.61 c-0.69,0.73-1.65,1.19-2.74,1.23h-0.06v0.01h-0.09L3.99,61.66L3.99,61.66L3.99,61.66z M110.69,49.51l0.13-0.01 c1.02-0.06,1.97,0.27,2.71,0.87c0.78,0.63,1.31,1.57,1.43,2.64v0.04c0.01,0,0.01,0.11,0.01,0.13c0.06,1.02-0.27,1.97-0.87,2.71 c-0.63,0.78-1.57,1.31-2.64,1.43l-8.53,0.9c-1.08,0.11-2.1-0.23-2.87-0.86c-0.78-0.63-1.32-1.57-1.43-2.64 c-0.11-1.07,0.23-2.1,0.86-2.87c0.63-0.78,1.57-1.32,2.64-1.43C104.98,50.11,107.84,49.78,110.69,49.51L110.69,49.51L110.69,49.51 L110.69,49.51z M93.8,15.38c0.61-0.9,1.51-1.46,2.49-1.66c0.98-0.19,2.03-0.01,2.94,0.59l0.01,0.01c0.9,0.6,1.47,1.51,1.66,2.49 c0.19,0.98,0.01,2.03-0.59,2.94l-4.77,7.13c-0.6,0.9-1.51,1.47-2.5,1.67c-0.98,0.19-2.03,0.01-2.94-0.59 c-0.9-0.6-1.47-1.52-1.67-2.5c-0.19-0.98-0.01-2.03,0.59-2.94L93.8,15.38L93.8,15.38L93.8,15.38z"/>
+      <path class="st0" d="M36.37,82.46c-2.88-3.29-5.86-6.71-8.22-11.74c-2.31-4.96-3.59-10.08-3.55-15.4c0.05-5.32,1.4-10.8,4.34-16.46 c0.02-0.04,0.04-0.07,0.06-0.11l0,0c3.85-6.52,9.24-10.88,15.24-13.32c5.03-2.06,10.5-2.76,15.86-2.27 c5.34,0.49,10.57,2.17,15.14,4.87c5.81,3.44,10.59,8.54,13.22,14.98c1.42,3.49,2.38,7.38,2.5,11.64c0.12,4.25-0.61,8.83-2.57,13.67 c-3,7.43-10.01,15.39-14.6,22.7c-0.25-0.05-0.51-0.06-0.77-0.02l-6.19,0.92l9.43-32.79c0.27-0.93-0.28-1.9-1.21-2.17 c-0.93-0.26-1.9,0.28-2.17,1.21L63,92.49l-9.36,1.39l-9.89-31.43c0.71,0.14,1.46-0.17,1.85-0.83l7.01-11.93l3.57,8.19 c0.39,0.89,1.42,1.29,2.3,0.91c0.44-0.19,0.76-0.55,0.93-0.96l0,0l3.16-7.98l3.7,9.76c0.34,0.91,1.35,1.36,2.26,1.02 s1.36-1.35,1.02-2.26l-5.27-13.9c-0.15-0.49-0.52-0.91-1.03-1.11c-0.9-0.36-1.92,0.09-2.28,0.99l-3.27,8.27l-3.26-7.48 c-0.14-0.33-0.39-0.62-0.72-0.81c-0.83-0.49-1.91-0.21-2.39,0.62l-8.52,14.5l-0.61-1.93c-0.29-0.92-1.27-1.44-2.19-1.15 c-0.92,0.29-1.44,1.27-1.15,2.19L50.13,94.4l-6.78,1.01C41.72,90.56,39.22,85.72,36.37,82.46L36.37,82.46L36.37,82.46z"/>
+    </svg>
+  </span>
+  <p>Você também pode acessar os nichos diretamente da página inicial do site.</p>
+</div>
       <a href="index.html" class="btn-inicio">
         Ver página inicial
       </a>
@@ -744,20 +802,26 @@
     </div>
   </section>
 
-  <!-- Divisor -->
-  <div class="divider">
-    <div class="divider-line"></div>
-    <span class="divider-icon">📲</span>
-    <div class="divider-line"></div>
+  <!-- ══ SEÇÃO: INSTAGRAM ══ -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-icon">
+        <div class="insta-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill= "white">
+  <path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4z"/>
+  <path d="M9 3L7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3H9zm3 14a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
   </div>
+</span>
+      <div class="divider-line"></div>
+    </div>
 
   <!-- ══ SEÇÃO: INSTAGRAM ══ -->
   <section class="section-instagram">
     <div class="insta-inner">
 
       <div class="insta-top">
-        <div class="insta-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="white">
+        <div class="divider-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="45" height="45" fill="var(--terra)">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
           </svg>
         </div>
@@ -768,7 +832,7 @@
       </div>
 
       <p class="insta-desc">
-        Algum texto aqui!
+        Acompanhe os bastidores, novidades dos nichos e mais conteúdos de divulgação científica no nosso Instagram.
       </p>
 
       <a href="https://www.instagram.com/geo.mundoinvertido" target="_blank" class="btn-instagram">
@@ -785,7 +849,9 @@
   <div class="footer-inner">
     <div>
       <div class="logo-footer">GeoNicho</div>
-      <p>Projeto de extensão · Curso de Geografia</p>
+      <p>Projeto de extensão · Curso de Geografia · UFAL</p>
+      <p>Esse site usa Cookies. Os dados coletados serão usados apenas para fins acadêmicos</p>
+      <p><a href="mapadosite.html">Mapa do Site</a></p>
     </div>
   </div>
 </footer>
