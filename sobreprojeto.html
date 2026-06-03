@@ -1,1038 +1,1245 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HLXK630WR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-1HLXK630WR');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HLXK630WR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1HLXK630WR');
+  </script>
 
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="shortcut icon" href="favicon.ico">
-<link rel="manifest" href="site.webmanifest"> 
-<title>GeoNicho — Página Inicial</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <title>GeoNicho — Página Inicial</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
 
-<script data-goatcounter="https://geomundoinvertido.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://geomundoinvertido.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
-<style>
-  :root {
-    --terra:  #6B3A1F;
-    --argila: #A0522D;
-    --ocre:   #C8833A;
-    --areia:  #E8D5B0;
-    --folha:  #3A5A2A;
-    --musgo:  #5C7A3E;
-    --ceu:    #4A7FA5;
-    --claro:  #7BA7C2;
-    --escuro: #2E5F7A;
-    --oceano: #1E4D6B;
-    --papel:  #F5EFE0;
-    --cinza:  #2C2C2C;
-  }
+  <style>
+    :root {
+      --terra: #6B3A1F;
+      --argila: #A0522D;
+      --ocre: #C8833A;
+      --areia: #E8D5B0;
+      --folha: #3A5A2A;
+      --musgo: #5C7A3E;
+      --ceu: #4A7FA5;
+      --claro: #7BA7C2;
+      --escuro: #2E5F7A;
+      --oceano: #1E4D6B;
+      --papel: #F5EFE0;
+      --cinza: #2C2C2C;
+    }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-    background: var(--papel);
-    font-family: 'DM Sans', sans-serif;
-    color: var(--cinza);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(106,58,31,.04) 40px),
-      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(106,58,31,.04) 40px);
-    pointer-events: none;
-    z-index: -1;
-  }
+    body {
+      background: var(--papel);
+      font-family: 'DM Sans', sans-serif;
+      color: var(--cinza);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-  /* ══ HEADER ══ */
-  header {
-    position: relative;
-    background: linear-gradient(160deg, var(--terra) 0%, var(--argila) 60%, var(--ocre) 100%);
-    padding: 0 0 25px;
-    overflow: hidden;
-    border-bottom: 3px solid #6B3A1F;
-    z-index: 1;
-    margin-bottom: -25px;
-  }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(106, 58, 31, .04) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(106, 58, 31, .04) 40px);
+      pointer-events: none;
+      z-index: -1;
+    }
 
-  .header-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 24px 0;
-  }
+    /* ══ HEADER ══ */
+    header {
+      position: relative;
+      background: linear-gradient(160deg, var(--terra) 0%, var(--argila) 60%, var(--ocre) 100%);
+      padding: 0 0 25px;
+      overflow: hidden;
+      border-bottom: 3px solid #6B3A1F;
+      z-index: 1;
+      margin-bottom: -25px;
+    }
 
-  .badge-inst {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.75);
-  }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px 0;
+    }
 
-  .icon-compass {
-    width: 36px; height: 36px;
-    background: rgba(255,255,255,.15);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
-  }
+    .badge-inst {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .75);
+    }
 
-  .header-body { padding: 10px 24px 0; }
+    .icon-compass {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, .15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
 
-  .header-pretitle {
-    display: inline-block;
-    background: rgba(255,255,255,.18);
-    border: 1px solid rgba(255,255,255,.3);
-    border-radius: 20px;
-    padding: 4px 14px;
-    font-size: 11px;
-    color: rgba(255,255,255,.9);
-    letter-spacing: .06em;
-    margin-top: 14px;
-    margin-bottom: 10px;
-  }
+    .header-body {
+      padding: 10px 24px 0;
+    }
 
-  header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(26px, 6vw, 52px);
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 1.15;
-    color: #fff;
-    text-shadow: 0 2px 12px rgba(0,0,0,.2);
-  }
+    .header-pretitle {
+      display: inline-block;
+      background: rgba(255, 255, 255, .18);
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, .9);
+      letter-spacing: .06em;
+      margin-top: 14px;
+      margin-bottom: 10px;
+    }
 
-  header h1 span { color: var(--areia); }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 6vw, 52px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: #fff;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, .2);
+    }
 
-  .header-desc {
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: rgba(255,255,255,.75);
-    line-height: 1.6;
-    margin-top: 10px;
-    max-width: 480px;
-  }
+    header h1 span {
+      color: var(--areia);
+    }
 
-  /* ══ MAIN ══ */
-  .main-content {
-    position: relative;
-    z-index: 1;
-    padding: 32px 20px 0;
-  }
+    .header-desc {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(255, 255, 255, .75);
+      line-height: 1.6;
+      margin-top: 10px;
+      max-width: 480px;
+    }
 
-  /* ══ DIVISOR ══ */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 25px 0;
-    margin-top: 13px;
-  }
-  
-  .divider-line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--ocre), transparent); }
-  .divider-icon { font-size: 16px; }
+    /* ══ MAIN ══ */
+    .main-content {
+      position: relative;
+      z-index: 1;
+      padding: 32px 20px 0;
+    }
 
-  /* ══ SECTION LABEL (igual ao video-label) ══ */
-  .section-label {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(20px, 4vw, 30px);
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--terra);
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--ocre);
-    opacity: .4;
-  }
+    /* ══ DIVISOR ══ */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 25px 0;
+      margin-top: 13px;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--ocre), transparent);
+    }
+
+    .divider-icon {
+      font-size: 16px;
+    }
+
+    /* ══ SECTION LABEL (igual ao video-label) ══ */
+    .section-label {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 4vw, 30px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--ocre);
+      opacity: .4;
+    }
 
     .section-label1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(20px, 4vw, 30px);
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--terra);
-    margin-top: 5px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .section-label1::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--ocre);
-    opacity: .4;
-  }
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 4vw, 30px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-top: 5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(20px, 4vw, 30px);
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--terra);
-    margin-bottom: 4px;
-  }
+    .section-label1::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--ocre);
+      opacity: .4;
+    }
 
-  .section-subtitle {
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: var(--argila);
-    margin-bottom: 20px;
-  }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 4vw, 30px);
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--terra);
+      margin-bottom: 4px;
+    }
 
-  /* ══ BOAS-VINDAS ══ */
-  .section-boas-vindas {
-    background: #fff;
-    border-radius: 20px;
-    padding: 24px 22px;
-    box-shadow: 0 2px 14px rgba(106,58,31,.1);
-    border-left: 4px solid var(--ocre);
-    position: relative;
-    overflow: hidden;
-  }
+    .section-subtitle {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--argila);
+      margin-bottom: 20px;
+    }
 
-  .section-boas-vindas::before {
-    content: '🌍';
-    position: absolute;
-    top: -10px; right: 16px;
-    font-size: 72px;
-    opacity: .06;
-    pointer-events: none;
-  }
+    /* ══ BOAS-VINDAS ══ */
+    .section-boas-vindas {
+      background: #fff;
+      border-radius: 20px;
+      padding: 24px 22px;
+      box-shadow: 0 2px 14px rgba(106, 58, 31, .1);
+      border-left: 4px solid var(--ocre);
+      position: relative;
+      overflow: hidden;
+    }
 
-  .boas-vindas-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--terra);
-    margin-bottom: 12px;
-  }
+    .section-boas-vindas::before {
+      content: '🌍';
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      font-size: 72px;
+      opacity: .06;
+      pointer-events: none;
+    }
 
-  .boas-vindas-text {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #4a4a4a;
-  }
+    .boas-vindas-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--terra);
+      margin-bottom: 12px;
+    }
 
-  .boas-vindas-text + .boas-vindas-text {
-    margin-top: 10px;
-  }
+    .boas-vindas-text {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #4a4a4a;
+    }
 
-  /* ══ OBJETIVOS ══ */
-  .objetivos-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
+    .boas-vindas-text+.boas-vindas-text {
+      margin-top: 10px;
+    }
 
-  .objetivo-card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 18px 18px 18px 20px;
-    border-left: 4px solid var(--ocre);
-    box-shadow: 0 2px 14px rgba(106,58,31,.08);
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    transition: transform .2s, box-shadow .2s;
-  }
-  .objetivo-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(106,58,31,.15); }
-  .objetivo-card.verde { border-left-color: var(--musgo); }
-  .objetivo-card.azul  { border-left-color: var(--ceu); }
+    /* ══ OBJETIVOS ══ */
+    .objetivos-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
 
-  .objetivo-emoji {
-    font-size: 24px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
+    .objetivo-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 18px 18px 18px 20px;
+      border-left: 4px solid var(--ocre);
+      box-shadow: 0 2px 14px rgba(106, 58, 31, .08);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: transform .2s, box-shadow .2s;
+    }
 
-  .objetivo-card h3 {
-    font-family: 'Lora', serif;
-    font-size: 14.5px;
-    font-weight: 600;
-    color: var(--terra);
-    margin-bottom: 4px;
-    line-height: 1.3;
-  }
-  .objetivo-card.verde h3 { color: var(--folha); }
-  .objetivo-card.azul  h3 { color: var(--escuro); }
+    .objetivo-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(106, 58, 31, .15);
+    }
 
-  .objetivo-card p {
-    font-size: 13px;
-    line-height: 1.65;
-    color: #5a5a5a;
-  }
+    .objetivo-card.verde {
+      border-left-color: var(--musgo);
+    }
+
+    .objetivo-card.azul {
+      border-left-color: var(--ceu);
+    }
+
+    .objetivo-emoji {
+      font-size: 24px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .objetivo-card h3 {
+      font-family: 'Lora', serif;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--terra);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .objetivo-card.verde h3 {
+      color: var(--folha);
+    }
+
+    .objetivo-card.azul h3 {
+      color: var(--escuro);
+    }
+
+    .objetivo-card p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: #5a5a5a;
+    }
 
     .btn-saiba {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 12px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12.5px;
-    font-weight: 500;
-    color: var(--argila);
-    transition: gap .2s;
-  }
-  .btn-saiba:hover { gap: 10px; }
-
-  .btn-saiba a {
-  color: inherit;
-  text-decoration: underline;
-  }
-
-  /* ══ LISTA DE NICHOS ══ */
-  .nichos-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  /* ══ INSTAGRAM ══ */
-  .section-instagram {
-    position: relative;
-    z-index: 1;
-  }
-
-  .insta-inner {
-    background: var(--papel);
-    border: 2px solid var(--areia);
-    border-radius: 24px;
-    padding: 28px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    box-shadow: 0 4px 20px rgba(106,58,31,.1);
-  }
-
-  .insta-top {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .insta-icon {
-    background: linear-gradient(135deg, var(--ocre), var(--argila));
-    width: 56px; height: 56px;
-    border-radius: 16px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(200,131,58,.3);
-  }
-
-  .insta-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--terra);
-    line-height: 1.1;
-  }
-
-  .insta-handle {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--argila);
-    margin-top: 2px;
-    letter-spacing: .03em;
-  }
-
-  .insta-desc {
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: 13.5px;
-    color: #252525;
-    line-height: 1.7;
-  }
-
-  .btn-instagram {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 14px;
-    background: var(--argila);
-    color: #fff;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 16px rgba(106,58,31,.25);
-    transition: transform .2s, box-shadow .2s;
-    letter-spacing: .03em;
-  }
-  .btn-instagram:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(106,58,31,.3); }
-  .btn-instagram:active { transform: scale(.96); }
-
- /* ── EXPLORE OUTROS NICHOS ── */
-  .section-explore {
-    position: relative;
-    z-index: 1;
-    margin-top: 20px;
-    margin-bottom: 25px;
-    padding: 0 20px;
-  }
-
-  .explore-inner {
-    background: linear-gradient(135deg, var(--folha) 0%, var(--musgo) 100%);
-    border-radius: 24px;
-    padding: 32px 24px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 0 8px 32px rgba(106,58,31,.2);
-  }
-
-  .explore-icon {
-    font-size: 36px;
-    background: rgba(255,255,255,.15);
-    width: 64px; height: 64px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-  }
-
-  .explore-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(20px, 4vw, 30px);
-    font-weight: 900;
-    color: #fff;
-  }
-
-  .explore-desc {
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: rgb(255, 255, 255);
-    line-height: 1.7;
-    max-width: 340px;
-  }
-
-  .explore-dica {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    background: rgba(255,255,255,.12);
-    border: 1px solid rgba(255,255,255,.2);
-    border-radius: 14px;
-    padding: 12px 16px;
-    text-align: left;
-    max-width: 340px;
-    align-items: center;
-  }
-
-  .explore-dica span { font-size: 18px; flex-shrink: 0; }
-
-  .explore-dica p {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.945);
-    line-height: 1.6;
-  }
-
-  .btn-inicio {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 8px;
-    padding: 14px 28px;
-    background: var(--escuro);
-    color: #ffff;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 16px rgba(0,0,0,.15);
-    transition: transform .2s, box-shadow .2s;
-  }
-
-  .btn-inicio:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,.2);
-  }
-
-  .btn-inicio:active { transform: scale(.96); }
-
-  /* ══ FOOTER ══ */
-  footer {
-    position: relative;
-    z-index: 1;
-    margin-top: 40px;
-    background: var(--terra);
-    padding: 28px 24px 28px;
-    text-align: center;
-  }
-
-  .footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .logo-footer {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 900;
-    color: var(--areia);
-    letter-spacing: .04em;
-    margin-bottom: 5px;
-  }
-
-  footer p { font-size: 11.5px; color: rgba(232,213,176,.6); line-height: 1.7; }
-
-  .footer-inner a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-  .footer-inner a:hover {
-  color: var(--papel);
-}
-
-  .footer-inner a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-  .footer-inner a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-  .footer-inner a:hover {
-  color: var(--papel);
-}
-
-  .footer-inner a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-  .footer-inner a:hover {
-  color: var(--papel);
-}
-
-  /* ══ CARROSSEL ══ */
-  .carousel-wrapper {
-    position: relative;
-    border-radius: 18px;
-    border: 3.5px solid var(--ocre);
-    overflow: hidden;
-    background: #000;
-    aspect-ratio: 16/9;
-    box-shadow: 0 4px 20px rgba(106,58,31,.18);
-    margin-bottom: 0;
-    max-width: 560px;
-  }
-
-  .carousel-track {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform .5s cubic-bezier(.4,0,.2,1);
-  }
-
-  .carousel-slide {
-    min-width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px; height: 20px;
-    border-radius: 50%;
-    background: rgba(255,255,255,.82);
-    border: none;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.2);
-    transition: background .2s, transform .2s;
-    z-index: 2;
-    
-  }
-  .carousel-btn:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
-  .carousel-btn.prev { left: 10px; padding-right: 1px; padding-bottom: 0.75px;}
-  .carousel-btn.next { right: 10px; padding-left: 1px; padding-bottom: 0.75px;}
-
-  .carousel-dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 7px;
-    z-index: 2;
-  }
-
-  .carousel-dot {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: rgba(255,255,255,.5);
-    border: none;
-    cursor: pointer;
-    transition: background .25s, transform .25s;
-    padding: 0;
-  }
-  .carousel-dot.active { background: #fff; transform: scale(1.3); }
-
-  .carousel-caption {
-    font-size: 11px;
-    color: var(--argila);
-    text-align: center;
-    font-style: italic;
-    margin-top: 6px;
-    margin-bottom: 18px;
-  }
-
-  /* ══ DESCRIÇÃO DETALHADA ══ */
-  .section-descricao {
-    background: #fff;
-    border-radius: 18px;
-    padding: 22px 22px;
-    box-shadow: 0 2px 14px rgba(106,58,31,.09);
-    border-left: 4px solid var(--ceu);
-    margin-top: 20px;
-  }
-
-  .descricao-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--escuro);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .descricao-body {
-    font-size: 13.5px;
-    line-height: 1.85;
-    color: #4a4a4a;
-  }
-
-  .descricao-body p + p { margin-top: 10px; }
-
-  /* ══ EQUIPE / ALUNOS ══ */
-  .section-equipe {
-    background: #fff;
-    border-radius: 18px;
-    padding: 22px 22px;
-    box-shadow: 0 2px 14px rgba(106,58,31,.09);
-    border-left: 4px solid var(--musgo);
-  }
-
-  .equipe-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--folha);
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .equipe-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .aluno-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--papel);
-    border-radius: 12px;
-    padding: 12px 14px;
-    border: 1px solid var(--areia);
-    transition: box-shadow .2s;
-  }
-  .aluno-card:hover { box-shadow: 0 4px 14px rgba(58,90,42,.12); }
-
-  .aluno-info { flex: 1; min-width: 0; }
-
-  .aluno-nome {
-    font-family: 'Lora', serif;
-    font-size: 17px;
-    font-weight: 1000;
-    color: var(--terra);
-    line-height: 1.2;
-  }
-
-  .aluno-role {
-    font-size: 15px;
-    color: var(--argila);
-  }
-
-/* ══ ANIMAÇÕES ══ */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(22px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  header           { animation: fadeUp .5s ease both; }
-  .main-content    { animation: fadeUp .5s .1s ease both; }
-
-  /* ══ TABLET ≥ 640px ══ */
-  @media (min-width: 640px) {
-    .main-content { padding: 36px 40px 0; }
-    .objetivos-grid { grid-template-columns: 1fr 1fr; }
-  }
-
-  /* ══ DESKTOP ≥ 1024px ══ */
-  @media (min-width: 1024px) {
-    .header-top  { padding: 22px 60px 12px; }
-    .header-body { padding: 4px 60px 25px; }
-
-    .main-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4px 60px 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 60px;
-      align-items: start;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--argila);
+      transition: gap .2s;
     }
 
-    /* Coluna esquerda: boas-vindas + objetivos */
-    .col-esquerda {
-      grid-column: 1;
-      display: flex;
-      top: 2px;
-      margin-top: -6px;
-      flex-direction: column;
-      gap: 0;
-      position: sticky;
-      align-self: start;
+    .btn-saiba:hover {
+      gap: 10px;
     }
 
-    .divider { margin: 25px 0; margin-top: 13px}
+    .btn-saiba a {
+      color: inherit;
+      text-decoration: underline;
+    }
 
-    .nicho-info h3 { font-size: 20px;}
-
-    /* Coluna direita: nichos + como funciona + instagram */
-    .col-direita {
-      grid-column: 2;
+    /* ══ LISTA DE NICHOS ══ */
+    .nichos-lista {
       display: flex;
       flex-direction: column;
-      margin-top: -23px;
-      gap: 0;
+      gap: 12px;
     }
 
-    .objetivos-grid { grid-template-columns: 1fr; }
+    /* ══ INSTAGRAM ══ */
+    .section-instagram {
+      position: relative;
+      z-index: 1;
+    }
 
-    footer .footer-inner {
-      flex-direction: row;
+    .insta-inner {
+      background: var(--papel);
+      border: 2px solid var(--areia);
+      border-radius: 24px;
+      padding: 28px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 4px 20px rgba(106, 58, 31, .1);
+    }
+
+    .insta-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .insta-icon {
+      background: linear-gradient(135deg, var(--ocre), var(--argila));
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(200, 131, 58, .3);
+    }
+
+    .insta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--terra);
+      line-height: 1.1;
+    }
+
+    .insta-handle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--argila);
+      margin-top: 2px;
+      letter-spacing: .03em;
+    }
+
+    .insta-desc {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 13.5px;
+      color: #252525;
+      line-height: 1.7;
+    }
+
+    .btn-instagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px;
+      background: var(--argila);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(106, 58, 31, .25);
+      transition: transform .2s, box-shadow .2s;
+      letter-spacing: .03em;
+    }
+
+    .btn-instagram:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(106, 58, 31, .3);
+    }
+
+    .btn-instagram:active {
+      transform: scale(.96);
+    }
+
+    /* ── EXPLORE OUTROS NICHOS ── */
+    .section-explore {
+      position: relative;
+      z-index: 1;
+      margin-top: 20px;
+      margin-bottom: 25px;
+      padding: 0 20px;
+    }
+
+    .explore-inner {
+      background: linear-gradient(135deg, var(--folha) 0%, var(--musgo) 100%);
+      border-radius: 24px;
+      padding: 32px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 32px rgba(106, 58, 31, .2);
+    }
+
+    .explore-icon {
+      font-size: 36px;
+      background: rgba(255, 255, 255, .15);
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
       justify-content: center;
     }
-  }
+
+    .explore-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 4vw, 30px);
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .explore-desc {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: rgb(255, 255, 255);
+      line-height: 1.7;
+      max-width: 340px;
+    }
+
+    .explore-dica {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 14px;
+      padding: 12px 16px;
+      text-align: left;
+      max-width: 340px;
+      align-items: center;
+    }
+
+    .explore-dica span {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .explore-dica p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.945);
+      line-height: 1.6;
+    }
+
+    .btn-inicio {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding: 14px 28px;
+      background: var(--escuro);
+      color: #ffff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .15);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn-inicio:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+    }
+
+    .btn-inicio:active {
+      transform: scale(.96);
+    }
+
+    /* ══ FOOTER ══ */
+    footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 40px;
+      background: var(--terra);
+      padding: 28px 24px 28px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo-footer {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--areia);
+      letter-spacing: .04em;
+      margin-bottom: 5px;
+    }
+
+    footer p {
+      font-size: 11.5px;
+      color: rgba(232, 213, 176, .6);
+      line-height: 1.7;
+    }
+
+    .footer-inner a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    .footer-inner a:hover {
+      color: var(--papel);
+    }
+
+    .footer-inner a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    .footer-inner a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    .footer-inner a:hover {
+      color: var(--papel);
+    }
+
+    .footer-inner a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    .footer-inner a:hover {
+      color: var(--papel);
+    }
+
+    /* ══ CARROSSEL ══ */
+    .carousel-wrapper {
+      position: relative;
+      border-radius: 18px;
+      border: 3.5px solid var(--ocre);
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 16/9;
+      box-shadow: 0 4px 20px rgba(106, 58, 31, .18);
+      margin-bottom: 0;
+      max-width: 560px;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .82);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+      transition: background .2s, transform .2s;
+      z-index: 2;
+
+    }
+
+    .carousel-btn:hover {
+      background: #fff;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .carousel-btn.prev {
+      left: 10px;
+      padding-right: 1px;
+      padding-bottom: 0.75px;
+    }
+
+    .carousel-btn.next {
+      right: 10px;
+      padding-left: 1px;
+      padding-bottom: 0.75px;
+    }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 7px;
+      z-index: 2;
+    }
+
+    .carousel-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .5);
+      border: none;
+      cursor: pointer;
+      transition: background .25s, transform .25s;
+      padding: 0;
+    }
+
+    .carousel-dot.active {
+      background: #fff;
+      transform: scale(1.3);
+    }
+
+    .carousel-caption {
+      font-size: 11px;
+      color: var(--argila);
+      text-align: center;
+      font-style: italic;
+      margin-top: 6px;
+      margin-bottom: 18px;
+    }
+
+    /* ══ DESCRIÇÃO DETALHADA ══ */
+    .section-descricao {
+      background: #fff;
+      border-radius: 18px;
+      padding: 22px 22px;
+      box-shadow: 0 2px 14px rgba(106, 58, 31, .09);
+      border-left: 4px solid var(--ceu);
+      margin-top: 20px;
+    }
+
+    .descricao-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--escuro);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .descricao-body {
+      font-size: 13.5px;
+      line-height: 1.85;
+      color: #4a4a4a;
+    }
+
+    .descricao-body p+p {
+      margin-top: 10px;
+    }
+
+    /* ══ EQUIPE / ALUNOS ══ */
+    .section-equipe {
+      background: #fff;
+      border-radius: 18px;
+      padding: 22px 22px;
+      box-shadow: 0 2px 14px rgba(106, 58, 31, .09);
+      border-left: 4px solid var(--musgo);
+    }
+
+    .equipe-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--folha);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .equipe-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .aluno-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--papel);
+      border-radius: 12px;
+      padding: 12px 14px;
+      border: 1px solid var(--areia);
+      transition: box-shadow .2s;
+    }
+
+    .aluno-card:hover {
+      box-shadow: 0 4px 14px rgba(58, 90, 42, .12);
+    }
+
+    .aluno-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .aluno-nome {
+      font-family: 'Lora', serif;
+      font-size: 17px;
+      font-weight: 1000;
+      color: var(--terra);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .aluno-role {
+      font-size: 15px;
+      color: var(--argila);
+    }
+
+    /* ══ ANIMAÇÕES ══ */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      animation: fadeUp .5s ease both;
+    }
+
+    .main-content {
+      animation: fadeUp .5s .1s ease both;
+    }
+
+    /* ══ TABLET ≥ 640px ══ */
+    @media (min-width: 640px) {
+      .main-content {
+        padding: 36px 40px 0;
+      }
+
+      .objetivos-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ══ DESKTOP ≥ 1024px ══ */
+    @media (min-width: 1024px) {
+      .header-top {
+        padding: 22px 60px 12px;
+      }
+
+      .header-body {
+        padding: 4px 60px 25px;
+      }
+
+      .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4px 60px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 60px;
+        align-items: start;
+      }
+
+      /* Coluna esquerda: boas-vindas + objetivos */
+      .col-esquerda {
+        grid-column: 1;
+        display: flex;
+        top: 2px;
+        margin-top: -6px;
+        flex-direction: column;
+        gap: 0;
+        position: sticky;
+        align-self: start;
+      }
+
+      .divider {
+        margin: 25px 0;
+        margin-top: 13px
+      }
+
+      .nicho-info h3 {
+        font-size: 20px;
+      }
+
+      /* Coluna direita: nichos + como funciona + instagram */
+      .col-direita {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        margin-top: -23px;
+        gap: 0;
+      }
+
+      .objetivos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer .footer-inner {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
 
     .section-explore {
-    margin-top: 5px;
-    margin-bottom: 15px;
-  }
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
 
 
-  /* ══ WIDE ≥ 1400px ══ */
-  @media (min-width: 1400px) {
-    .main-content { max-width: 1400px; padding: 56px 80px 0; column-gap: 80px; }
-    footer { padding: 32px 80px 44px; }
-  }
+    /* ══ WIDE ≥ 1400px ══ */
+    @media (min-width: 1400px) {
+      .main-content {
+        max-width: 1400px;
+        padding: 56px 80px 0;
+        column-gap: 80px;
+      }
 
-</style>
+      footer {
+        padding: 32px 80px 44px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ══ HEADER ══ -->
-<header>
-  <div class="header-top">
-    <span class="badge-inst">Universidade Federal de Alagoas · Geografia</span>
-    <div class="icon-compass">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 122.88" width="22" height="22" fill=var(--papel)>
-    <path d="M61.44,0A61.46,61.46,0,1,1,18,18,61.21,61.21,0,0,1,61.44,0ZM77,57.42l-7.23,4.11a7.56,7.56,0,0,1-.25,1.57,8,8,0,0,1-9.75,5.63,8.19,8.19,0,0,1-1.58-.61l-7.66,4.36L81.43,95.23,77,57.42ZM46.55,65.88l7.37-4.19A7.86,7.86,0,0,1,54.16,59a8,8,0,0,1,9.75-5.63,8.28,8.28,0,0,1,2.55,1.2L73,50.82,42.14,28.07l4.41,37.81ZM95.36,27.52a48,48,0,1,0,14,33.92,47.82,47.82,0,0,0-14-33.92Z"/>
-  </svg>
-  </div>
-  </div>
-  <div class="header-body">
-    <h1>Sobre o<span> Projeto</span></h1>
-    <p class="header-desc">Conheça mais sobre a turma, o processo e os resposáveis pelo projeto.</p>
-  </div>
-</header>
-
-<!-- ══ CONTEÚDO PRINCIPAL ══ -->
-<div class="main-content">
-
-  <!-- ── COLUNA ESQUERDA ── -->
-  <div class="col-esquerda">
-
-    <!-- Bem-vindo + Carrossel -->
-    <div class="section-label1">Conheça o projeto!</div>
-
-    <!-- Carrossel -->
-    <div class="carousel-wrapper">
-      <div class="carousel-track" id="carouselTrack">
-        <img class="carousel-slide" src="Captura de Tela (6).png"  alt="Foto da turma ou processo 1">
-        <img class="carousel-slide" src="Captura de Tela (16).png" alt="Foto da turma ou processo 2">
-        <img class="carousel-slide" src="Captura de Tela (5).png"  alt="Foto da turma ou processo 3">
-      </div>
-      <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior">&#8249;</button>
-      <button class="carousel-btn next" id="nextBtn" aria-label="Próximo">&#8250;</button>
-      <div class="carousel-dots" id="carouselDots">
-        <button class="carousel-dot active" data-index="0" aria-label="Slide 1"></button>
-        <button class="carousel-dot"        data-index="1" aria-label="Slide 2"></button>
-        <button class="carousel-dot"        data-index="2" aria-label="Slide 3"></button>
-      </div>
-    </div>
-    <p class="carousel-caption">📸 Momentos da turma e do processo de criação do projeto</p>
-
-    <!-- Descrição Detalhada -->
-    <section class="section-descricao">
-      <h2 class="descricao-title">Sobre o Projeto</h2>
-      <div class="descricao-body">
-        <p>
-          O <strong>GeoNicho</strong> é um projeto de extensão do curso de Geografia da Universidade Federal de Alagoas (UFAL) que transforma o corredor da faculdade em um espaço vivo de aprendizado interativo e acessível.
-        </p>
-        <p>
-          A ideia central nasceu da necessidade de aproximar os saberes geográficos do cotidiano de estudantes, professores e visitantes. Cada nicho foi pensado, pesquisado e montado coletivamente pela turma, reunindo objetos cuidadosamente selecionados para representar uma ou mais vertentes da Geografia.
-        </p>
-        <p>
-          Ao escanear o QR Code de cada nicho, o visitante acessa vídeos explicativos, curiosidades e conteúdos produzidos pelos próprios alunos — conectando teoria e prática de forma leve e envolvente. O projeto integra tecnologia, criatividade e conhecimento científico em um único corredor.
-        </p>
-        <p>
-          Aqui você pode descrever com mais detalhes os bastidores, as etapas de desenvolvimento, os desafios enfrentados e as conquistas da turma ao longo de todo o processo de criação do projeto.
-        </p>
-      </div>
-    </section>
-
-
-  </div><!-- /col-esquerda -->
-
-  <!-- ── COLUNA DIREITA ── -->
-<div class="col-direita"> 
-
-    <!-- Equipe -->
-    <div class="section-label">A Turma</div>
-    <section class="section-equipe">
-      <h2 class="equipe-title">Alunos e Atribuições</h2>
-      <div class="equipe-grid">
-
-        <div class="aluno-card">
-          <div class="aluno-info">
-            <div class="aluno-nome">História do Pensamento Geográfico</div>
-            <div class="aluno-role">Fulano - Nicho</div>
-            <div class="aluno-role">Beltrano - Nicho</div>
-            <div class="aluno-role">Cicrano - Roteiro</div>
-          </div>
-        </div>
-
-        <div class="aluno-card">
-          <div class="aluno-info">
-            <div class="aluno-nome">Nome do Aluno 2</div>
-            <div class="aluno-role">Produção de vídeos e roteiros</div>
-          </div>
-        </div>
-
-        <div class="aluno-card">
-          <div class="aluno-info">
-            <div class="aluno-nome">Nome do Aluno 3</div>
-            <div class="aluno-role">Design gráfico e identidade visual</div>
-          </div>
-        </div>
-
-        <div class="aluno-card">
-          <div class="aluno-info">
-            <div class="aluno-nome">Nome do Aluno 4</div>
-            <div class="aluno-role">Desenvolvimento web e QR Codes</div>
-          </div>
-        </div>
-
-        <div class="aluno-card">
-          <div class="aluno-info">
-            <div class="aluno-nome">Nome do Aluno 5</div>
-            <div class="aluno-role">Pesquisa e conteúdo científico</div>
-          </div>
-        </div>
-
-        <div class="aluno-card">
-          <div class="aluno-info">
-            <div class="aluno-nome">Nome do Aluno 6</div>
-            <div class="aluno-role">Comunicação e redes sociais</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div style="margin-top:20px"></div>
-
-<div class="divider">
-      <div class="divider-line"></div>
-      <span class="divider-icon">
-        <div class="insta-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="white">
-          <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9a.5.5 0 0 0-.36.48V20.5a.5.5 0 0 0 .5.5l.16-.03L9 18.9l6 2.1 5.64-1.9a.5.5 0 0 0 .36-.48V3.5a.5.5 0 0 0-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/>
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="header-top">
+      <span class="badge-inst">Universidade Federal de Alagoas · Geografia</span>
+      <div class="icon-compass">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 122.88" width="22" height="22" fill=var(--papel)>
+          <path
+            d="M61.44,0A61.46,61.46,0,1,1,18,18,61.21,61.21,0,0,1,61.44,0ZM77,57.42l-7.23,4.11a7.56,7.56,0,0,1-.25,1.57,8,8,0,0,1-9.75,5.63,8.19,8.19,0,0,1-1.58-.61l-7.66,4.36L81.43,95.23,77,57.42ZM46.55,65.88l7.37-4.19A7.86,7.86,0,0,1,54.16,59a8,8,0,0,1,9.75-5.63,8.28,8.28,0,0,1,2.55,1.2L73,50.82,42.14,28.07l4.41,37.81ZM95.36,27.52a48,48,0,1,0,14,33.92,47.82,47.82,0,0,0-14-33.92Z" />
         </svg>
+      </div>
+    </div>
+    <div class="header-body">
+      <h1>Sobre o<span> Projeto</span></h1>
+      <p class="header-desc">Conheça mais sobre a turma, o processo e os resposáveis pelo projeto.</p>
+    </div>
+  </header>
+
+  <!-- ══ CONTEÚDO PRINCIPAL ══ -->
+  <div class="main-content">
+
+    <!-- ── COLUNA ESQUERDA ── -->
+    <div class="col-esquerda">
+
+      <!-- Bem-vindo + Carrossel -->
+
+      <div class="section-label1">Conheça o projeto!</div>
+
+      <!-- Carrossel -->
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+          <img class="carousel-slide" src="CAPTURA_1.jpeg" alt="Foto da turma ou processo 1">
+          <img class="carousel-slide" style="object-position: 50% 65%;" src="CAPTURA_2.jpeg" alt="Foto da turma ou processo 2">
+          <img class="carousel-slide" src="CAPTURA_3.jpeg" alt="Foto da turma ou processo 3">
+          <img class="carousel-slide" style="object-position: 50% 35%;" src="CAPTURA_4.jpeg" alt="Foto da turma ou processo 4">
+          <img class="carousel-slide" style="object-position: 50% 25%;" src="CAPTURA_5.jpeg" alt="Foto da turma ou processo 5">
+          
         </div>
-      </span>
-      
-      <div class="divider-line"></div>
-    </div>
-
-
- <section class="section-explore">
-    <div class="explore-inner">
-
-      <h2 class="explore-title">Explore o Corredor!</h2>
-      <p class="explore-desc">
-        Cada nicho ao longo do corredor esconde objetos, histórias e curiosidades
-        da Geografia. Procure as placas e escaneie os QR Codes!
-      </p>
-
-      <div class="explore-dica">
-  <span>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114.98 122.88" width="45" height="45">
-      <style>.st0{fill:#F4BB2C;}.st1{fill:#5C546A;}</style>
-      <path class="st1" d="M68.72,116.34c-1.22,2.09-2.9,3.72-4.82,4.83c-1.71,1-3.62,1.57-5.53,1.69c-1.94,0.12-3.9-0.25-5.69-1.11 c-1.22-0.6-2.36-1.43-3.37-2.51L68.72,116.34L68.72,116.34L68.72,116.34z M71.41,95.83l-0.63,2.95l-0.16,2.1l-25.33,3.77 c-0.09-1.51-0.33-3.14-0.71-4.83L71.41,95.83L71.41,95.83L71.41,95.83z M70.57,105.48l0.02,1.27l0.03,0.44 c0.07,0.83,0.08,1.67,0.03,2.5l-0.38,1.83l-23.52,3.5l-0.41-0.94l-0.92-3.76l-0.02-1.09L70.57,105.48L70.57,105.48L70.57,105.48z"/>
-      <path d="M56.76,3.84c0.03-1.09,0.49-2.06,1.22-2.75c0.71-0.68,1.69-1.09,2.75-1.08V0c0.09,0,0.18,0.01,0.27,0.02 c0.99,0.08,1.88,0.53,2.52,1.2c0.68,0.71,1.09,1.68,1.08,2.75h0.01c0,0.07,0,0.14-0.01,0.2l-0.21,8.37l0.01,0 c0,0.09-0.01,0.18-0.02,0.27c-0.08,1-0.53,1.88-1.2,2.52c-0.72,0.68-1.69,1.09-2.75,1.08v0.01c-0.09,0-0.18-0.01-0.27-0.02 c-1-0.08-1.88-0.53-2.52-1.2c-0.68-0.72-1.09-1.69-1.08-2.75l-0.01,0c0-0.07,0-0.14,0.01-0.2L56.76,3.84L56.76,3.84L56.76,3.84z M14.26,18.5c-0.79-0.74-1.21-1.73-1.25-2.73c-0.04-1,0.31-2.02,1.04-2.81c0.74-0.79,1.73-1.21,2.73-1.25 c1-0.04,2.02,0.31,2.81,1.04l6.28,5.85c0.79,0.74,1.21,1.73,1.25,2.73c0.04,1.01-0.31,2.02-1.04,2.81 c-0.74,0.79-1.73,1.21-2.73,1.25c-1.01,0.04-2.02-0.31-2.81-1.04L14.26,18.5L14.26,18.5L14.26,18.5z M3.99,61.66 c-1.06,0.02-2.03-0.39-2.75-1.06c-0.73-0.69-1.2-1.65-1.24-2.74c-0.04-1.08,0.37-2.08,1.06-2.81c0.69-0.73,1.65-1.2,2.74-1.23 l8.57-0.29c1.08-0.04,2.08,0.37,2.81,1.06c0.73,0.69,1.2,1.65,1.23,2.74v0.06h0.01l-0.01,0.14c-0.02,1.01-0.42,1.92-1.06,2.61 c-0.69,0.73-1.65,1.19-2.74,1.23h-0.06v0.01h-0.09L3.99,61.66L3.99,61.66L3.99,61.66z M110.69,49.51l0.13-0.01 c1.02-0.06,1.97,0.27,2.71,0.87c0.78,0.63,1.31,1.57,1.43,2.64v0.04c0.01,0,0.01,0.11,0.01,0.13c0.06,1.02-0.27,1.97-0.87,2.71 c-0.63,0.78-1.57,1.31-2.64,1.43l-8.53,0.9c-1.08,0.11-2.1-0.23-2.87-0.86c-0.78-0.63-1.32-1.57-1.43-2.64 c-0.11-1.07,0.23-2.1,0.86-2.87c0.63-0.78,1.57-1.32,2.64-1.43C104.98,50.11,107.84,49.78,110.69,49.51L110.69,49.51L110.69,49.51 L110.69,49.51z M93.8,15.38c0.61-0.9,1.51-1.46,2.49-1.66c0.98-0.19,2.03-0.01,2.94,0.59l0.01,0.01c0.9,0.6,1.47,1.51,1.66,2.49 c0.19,0.98,0.01,2.03-0.59,2.94l-4.77,7.13c-0.6,0.9-1.51,1.47-2.5,1.67c-0.98,0.19-2.03,0.01-2.94-0.59 c-0.9-0.6-1.47-1.52-1.67-2.5c-0.19-0.98-0.01-2.03,0.59-2.94L93.8,15.38L93.8,15.38L93.8,15.38z"/>
-      <path class="st0" d="M36.37,82.46c-2.88-3.29-5.86-6.71-8.22-11.74c-2.31-4.96-3.59-10.08-3.55-15.4c0.05-5.32,1.4-10.8,4.34-16.46 c0.02-0.04,0.04-0.07,0.06-0.11l0,0c3.85-6.52,9.24-10.88,15.24-13.32c5.03-2.06,10.5-2.76,15.86-2.27 c5.34,0.49,10.57,2.17,15.14,4.87c5.81,3.44,10.59,8.54,13.22,14.98c1.42,3.49,2.38,7.38,2.5,11.64c0.12,4.25-0.61,8.83-2.57,13.67 c-3,7.43-10.01,15.39-14.6,22.7c-0.25-0.05-0.51-0.06-0.77-0.02l-6.19,0.92l9.43-32.79c0.27-0.93-0.28-1.9-1.21-2.17 c-0.93-0.26-1.9,0.28-2.17,1.21L63,92.49l-9.36,1.39l-9.89-31.43c0.71,0.14,1.46-0.17,1.85-0.83l7.01-11.93l3.57,8.19 c0.39,0.89,1.42,1.29,2.3,0.91c0.44-0.19,0.76-0.55,0.93-0.96l0,0l3.16-7.98l3.7,9.76c0.34,0.91,1.35,1.36,2.26,1.02 s1.36-1.35,1.02-2.26l-5.27-13.9c-0.15-0.49-0.52-0.91-1.03-1.11c-0.9-0.36-1.92,0.09-2.28,0.99l-3.27,8.27l-3.26-7.48 c-0.14-0.33-0.39-0.62-0.72-0.81c-0.83-0.49-1.91-0.21-2.39,0.62l-8.52,14.5l-0.61-1.93c-0.29-0.92-1.27-1.44-2.19-1.15 c-0.92,0.29-1.44,1.27-1.15,2.19L50.13,94.4l-6.78,1.01C41.72,90.56,39.22,85.72,36.37,82.46L36.37,82.46L36.37,82.46z"/>
-    </svg>
-  </span>
-  <p>Você também pode acessar os nichos diretamente da página inicial do site.</p>
-</div>
-      <a href="index.html" class="btn-inicio">
-        Ver página inicial
-      </a>
-
-    </div>
-  </section>
-
-  <!-- Divisor -->
-    <div class="divider">
-      <div class="divider-line"></div>
-      <span class="divider-icon">
-        <div class="insta-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill= "white">
-  <path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4z"/>
-  <path d="M9 3L7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3H9zm3 14a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
-  </div>
-</span>
-      <div class="divider-line"></div>
-    </div>
-
-  <!-- ══ SEÇÃO: INSTAGRAM ══ -->
-  <section class="section-instagram">
-    <div class="insta-inner">
-
-      <div class="insta-top">
-        <div class="divider-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="45" height="45" fill="var(--terra)">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-        </div>
-        <div>
-          <h2 class="insta-title">Siga o Projeto</h2>
-          <p class="insta-handle">@geo.mundoinvertido</p>
+        <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior">&#8249;</button>
+        <button class="carousel-btn next" id="nextBtn" aria-label="Próximo">&#8250;</button>
+        <div class="carousel-dots" id="carouselDots">
+          <button class="carousel-dot active" data-index="0" aria-label="Slide 1"></button>
+          <button class="carousel-dot" data-index="1" aria-label="Slide 2"></button>
+          <button class="carousel-dot" data-index="2" aria-label="Slide 3"></button>
+          <button class="carousel-dot" data-index="3" aria-label="Slide 4"></button>
+          <button class="carousel-dot" data-index="4" aria-label="Slide 5"></button>
         </div>
       </div>
+      <p class="carousel-caption">Momentos da turma e do processo de criação do projeto</p>
 
-      <p class="insta-desc">
-        Acompanhe os bastidores, novidades dos nichos e mais conteúdos de divulgação científica no nosso Instagram.
-      </p>
+      <!-- Descrição Detalhada -->
+      <section class="section-descricao">
+        <h2 class="descricao-title">Sobre o Projeto</h2>
+        <div class="descricao-body">
+          <p>
+            O <strong>GeoNicho</strong> é um projeto de extensão do curso de Geografia da Universidade Federal de
+            Alagoas (UFAL) que transforma o corredor da faculdade em um espaço vivo de aprendizado interativo e
+            acessível.
+          </p>
+          <p>
+            A ideia central nasceu da necessidade de aproximar os saberes geográficos do cotidiano de estudantes,
+            professores e visitantes. Cada nicho foi pensado, pesquisado e montado coletivamente pela turma, reunindo
+            objetos cuidadosamente selecionados para representar uma ou mais vertentes da Geografia.
+          </p>
+          <p>
+            Ao escanear o QR Code de cada nicho, o visitante acessa vídeos explicativos, curiosidades e conteúdos
+            produzidos pelos próprios alunos — conectando teoria e prática de forma leve e envolvente. O projeto integra
+            tecnologia, criatividade e conhecimento científico em um único corredor.
+          </p>
+          <p>
+            Aqui você pode descrever com mais detalhes os bastidores, as etapas de desenvolvimento, os desafios
+            enfrentados e as conquistas da turma ao longo de todo o processo de criação do projeto.
+          </p>
+        </div>
+      </section>
 
-      <a href="https://www.instagram.com/geo.mundoinvertido" target="_blank" class="btn-instagram">
-        Seguir no Instagram
-      </a>
 
+    </div><!-- /col-esquerda -->
+
+    <!-- ── COLUNA DIREITA ── -->
+    <div class="col-direita">
+
+      <!-- Equipe -->
+      <div class="section-label">A Turma</div>
+      <section class="section-equipe">
+        <h2 class="equipe-title">Alunos e Seus Nichos</h2>
+        <div class="equipe-grid">
+
+          <div class="aluno-card">
+            <div class="aluno-info">
+              <div class="aluno-nome">História do Pensamento Geográfico</div>
+              <div class="aluno-role">Josiane de Jesus</div>
+              <div class="aluno-role">Ana Luiza Barros Valença Pinto</div>
+              <div class="aluno-role">Caio Cesar Silva Santos</div>
+              <div class="aluno-role">Jadson Laurindo da Silva</div>
+              <div class="aluno-role">Maria Eduarda Flor Barnabe da Silva</div>
+            </div>
+          </div>
+
+          <div class="aluno-card">
+            <div class="aluno-info">
+              <div class="aluno-nome">Ensino Científico</div>
+              <div class="aluno-role">Jax Newton da Silva Malafaia</div>
+              <div class="aluno-role">Maria Evely Oliveira dos Santos</div>
+              <div class="aluno-role">Raissa dos Santos</div>
+              <div class="aluno-role">Roberth Thyago Roque dos Santos Melo</div>
+              <div class="aluno-role">Ruan Pablo Silva dos Santos</div>
+            </div>
+          </div>
+
+          <div class="aluno-card">
+            <div class="aluno-info">
+              <div class="aluno-nome">Cartografia e Topografia</div>
+              <div class="aluno-role">Daniela Maria da Conceição</div>
+              <div class="aluno-role">Manasses Barros Rocha de Oliveira</div>
+            </div>
+          </div>
+
+          <div class="aluno-card">
+            <div class="aluno-info">
+              <div class="aluno-nome">Geografia Econômica e <br> Formação Econômica e Territorial do Brasil</div>
+              <div class="aluno-role">Josenilson Melo Santos</div>
+              <div class="aluno-role">José Humberto da S. Santos</div>
+              <div class="aluno-role">Ruan Pablo Silva dos Santos</div>
+              <div class="aluno-role">Kelvin Silva de Andrade</div>
+            </div>
+          </div>
+
+          <div class="aluno-card">
+            <div class="aluno-info">
+              <div class="aluno-nome">Geografia Urbana e Geografia de Alagoas</div>
+              <div class="aluno-role">Douglas dos Santos Silva</div>
+              <div class="aluno-role">Eloiza Vitoria Bispo dos Santos</div>
+              <div class="aluno-role">Jhonathan Gabriel Silva Santos</div>
+              <div class="aluno-role">Micaele Natalia dos Santos Oliveira</div>
+            </div>
+          </div>
+
+          <div class="aluno-card">
+            <div class="aluno-info">
+              <div class="aluno-nome">Profissão Docente na Geografia</div>
+              <div class="aluno-role">Beatriz Larisse da Silva Santos</div>
+              <div class="aluno-role">Carine da Silva Cavalcante</div>
+              <div class="aluno-role">Giselle Vitoria Araujo Ferreira</div>
+              <div class="aluno-role">Ravilyn Albertina de Oliveira Silva</div>
+            </div>
+          </div>
+
+          <div class="aluno-card">
+            <div class="aluno-info">
+              <div class="aluno-nome">Climatologia, Hidrografia e Geomorfologia</div>
+              <div class="aluno-role">Ligia da Silva Fidelis</div>
+              <div class="aluno-role">Maria Soares de Mendonça</div>
+              <div class="aluno-role">Sandra Maria Alves da Silva</div>
+              <div class="aluno-role">Juliane Maria Ferino dos Santos Silva</div>
+            </div>
+          </div>
+
+          <div class="aluno-card">
+            <div class="aluno-info">
+              <div class="aluno-nome">Geoestatística e Quantificação</div>
+              <div class="aluno-role">Carlos Alberto da Costa</div>
+              <div class="aluno-role">Juliana da Silva Tenório Lins</div>
+              <div class="aluno-role">Victor Matheus da Silva Ramos</div>
+              <div class="aluno-role">Arthur Victor Bernardo Araújo</div>
+            </div>
+          </div>
+
+          <div class="aluno-card">
+            <div class="aluno-info">
+              <div class="aluno-nome">Geologia, Geografia dos Solos e Biogeografia</div>
+              <div class="aluno-role">Gabriela Fernanda Pereira dos Santos</div>
+              <div class="aluno-role">Léia Letícia Silva de Melo</div>
+              <div class="aluno-role">Sebastião Silva</div>
+              <div class="aluno-role">Fabiana Beatriz Silva Oliveira</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div style="margin-top:20px"></div>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <span class="divider-icon">
+          <div class="insta-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="white">
+              <path
+                d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9a.5.5 0 0 0-.36.48V20.5a.5.5 0 0 0 .5.5l.16-.03L9 18.9l6 2.1 5.64-1.9a.5.5 0 0 0 .36-.48V3.5a.5.5 0 0 0-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+            </svg>
+          </div>
+        </span>
+
+        <div class="divider-line"></div>
+      </div>
+
+
+      <section class="section-explore">
+        <div class="explore-inner">
+
+          <h2 class="explore-title">Explore o Corredor!</h2>
+          <p class="explore-desc">
+            Cada nicho ao longo do corredor esconde objetos, histórias e curiosidades
+            da Geografia. Procure as placas e escaneie os QR Codes!
+          </p>
+
+          <div class="explore-dica">
+            <span>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114.98 122.88" width="45" height="45">
+        <style>
+            .st0 { fill: #F4BB2C; } /* Amarelo (lâmpada) */
+            .st1 { fill: #5C546A; } /* Cinza escuro (base) */
+            .st2 { fill: #FFFFFF; } /* Branco (raios de luz) */
+        </style>
+        
+        <path class="st1" d="M68.72,116.34c-1.22,2.09-2.9,3.72-4.82,4.83c-1.71,1-3.62,1.57-5.53,1.69c-1.94,0.12-3.9-0.25-5.69-1.11 c-1.22-0.6-2.36-1.43-3.37-2.51L68.72,116.34L68.72,116.34L68.72,116.34z M71.41,95.83l-0.63,2.95l-0.16,2.1l-25.33,3.77 c-0.09-1.51-0.33-3.14-0.71-4.83L71.41,95.83L71.41,95.83L71.41,95.83z M70.57,105.48l0.02,1.27l0.03,0.44 c0.07,0.83,0.08,1.67,0.03,2.5l-0.38,1.83l-23.52,3.5l-0.41-0.94l-0.92-3.76l-0.02-1.09L70.57,105.48L70.57,105.48L70.57,105.48z" />
+        
+        <path class="st2" d="M56.76,3.84c0.03-1.09,0.49-2.06,1.22-2.75c0.71-0.68,1.69-1.09,2.75-1.08V0c0.09,0,0.18,0.01,0.27,0.02 c0.99,0.08,1.88,0.53,2.52,1.2c0.68,0.71,1.09,1.68,1.08,2.75h0.01c0,0.07,0,0.14-0.01,0.2l-0.21,8.37l0.01,0 c0,0.09-0.01,0.18-0.02,0.27c-0.08,1-0.53,1.88-1.2,2.52c-0.72,0.68-1.69,1.09-2.75,1.08v0.01c-0.09,0-0.18-0.01-0.27-0.02 c-1-0.08-1.88-0.53-2.52-1.2c-0.68-0.72-1.09-1.69-1.08-2.75l-0.01,0c0-0.07,0-0.14,0.01-0.2L56.76,3.84L56.76,3.84L56.76,3.84z M14.26,18.5c-0.79-0.74-1.21-1.73-1.25-2.73c-0.04-1,0.31-2.02,1.04-2.81c0.74-0.79,1.73-1.21,2.73-1.25 c1-0.04,2.02,0.31,2.81,1.04l6.28,5.85c0.79,0.74,1.21,1.73,1.25,2.73c0.04,1.01-0.31,2.02-1.04,2.81 c-0.74,0.79-1.73,1.21-2.73,1.25c-1.01,0.04-2.02-0.31-2.81-1.04L14.26,18.5L14.26,18.5L14.26,18.5z M3.99,61.66 c-1.06,0.02-2.03-0.39-2.75-1.06c-0.73-0.69-1.2-1.65-1.24-2.74c-0.04-1.08,0.37-2.08,1.06-2.81c0.69-0.73,1.65-1.2,2.74-1.23 l8.57-0.29c1.08-0.04,2.08,0.37,2.81,1.06c0.73,0.69,1.2,1.65,1.23,2.74v0.06h0.01l-0.01,0.14c-0.02,1.01-0.42,1.92-1.06,2.61 c-0.69,0.73-1.65,1.19-2.74,1.23h-0.06v0.01h-0.09L3.99,61.66L3.99,61.66L3.99,61.66z M110.69,49.51l0.13-0.01 c1.02-0.06,1.97,0.27,2.71,0.87c0.78,0.63,1.31,1.57,1.43,2.64v0.04c0.01,0,0.01,0.11,0.01,0.13c0.06,1.02-0.27,1.97-0.87,2.71 c-0.63,0.78-1.57,1.31-2.64,1.43l-8.53,0.9c-1.08,0.11-2.1-0.23-2.87-0.86c-0.78-0.63-1.32-1.57-1.43-2.64 c-0.11-1.07,0.23-2.1,0.86-2.87c0.63-0.78,1.57-1.32,2.64-1.43C104.98,50.11,107.84,49.78,110.69,49.51L110.69,49.51L110.69,49.51 L110.69,49.51z M93.8,15.38c0.61-0.9,1.51-1.46,2.49-1.66c0.98-0.19,2.03-0.01,2.94,0.59l0.01,0.01c0.9,0.6,1.47,1.51,1.66,2.49 c0.19,0.98,0.01,2.03-0.59,2.94l-4.77,7.13c-0.6,0.9-1.51,1.47-2.5,1.67c-0.98,0.19-2.03,0.01-2.94-0.59 c-0.9-0.6-1.47-1.52-1.67-2.5c-0.19-0.98-0.01-2.03,0.59-2.94L93.8,15.38L93.8,15.38L93.8,15.38z" />
+        
+        <path class="st0" d="M36.37,82.46c-2.88-3.29-5.86-6.71-8.22-11.74c-2.31-4.96-3.59-10.08-3.55-15.4c0.05-5.32,1.4-10.8,4.34-16.46 c0.02-0.04,0.04-0.07,0.06-0.11l0,0c3.85-6.52,9.24-10.88,15.24-13.32c5.03-2.06,10.5-2.76,15.86-2.27 c5.34,0.49,10.57,2.17,15.14,4.87c5.81,3.44,10.59,8.54,13.22,14.98c1.42,3.49,2.38,7.38,2.5,11.64c0.12,4.25-0.61,8.83-2.57,13.67 c-3,7.43-10.01,15.39-14.6,22.7c-0.25-0.05-0.51-0.06-0.77-0.02l-6.19,0.92l9.43-32.79c0.27-0.93-0.28-1.9-1.21-2.17 c-0.93-0.26-1.9,0.28-2.17,1.21L63,92.49l-9.36,1.39l-9.89-31.43c0.71,0.14,1.46-0.17,1.85-0.83l7.01-11.93l3.57,8.19 c0.39,0.89,1.42,1.29,2.3,0.91c0.44-0.19,0.76-0.55,0.93-0.96l0,0l3.16-7.98l3.7,9.76c0.34,0.91,1.35,1.36,2.26,1.02 s1.36-1.35,1.02-2.26l-5.27-13.9c-0.15-0.49-0.52-0.91-1.03-1.11c-0.9-0.36-1.92,0.09-2.28,0.99l-3.27,8.27l-3.26-7.48 c-0.14-0.33-0.39-0.62-0.72-0.81c-0.83-0.49-1.91-0.21-2.39,0.62l-8.52,14.5l-0.61-1.93c-0.29-0.92-1.27-1.44-2.19-1.15 c-0.92,0.29-1.44,1.27-1.15,2.19L50.13,94.4l-6.78,1.01C41.72,90.56,39.22,85.72,36.37,82.46L36.37,82.46L36.37,82.46z" />
+    </svg>
+            </span>
+            <p>Você também pode acessar os nichos diretamente da página inicial do site.</p>
+          </div>
+          <a href="index.html" class="btn-inicio">
+            Ver página inicial
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Divisor -->
+      <div class="divider">
+        <div class="divider-line"></div>
+        <span class="divider-icon">
+          <div class="insta-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="white">
+              <path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4z" />
+              <path
+                d="M9 3L7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3H9zm3 14a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" />
+            </svg>
+          </div>
+        </span>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- ══ SEÇÃO: INSTAGRAM ══ -->
+      <section class="section-instagram">
+        <div class="insta-inner">
+
+          <div class="insta-top">
+            <div class="divider-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="45" height="45" fill="var(--terra)">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </div>
+            <div>
+              <h2 class="insta-title">Siga o Projeto</h2>
+              <p class="insta-handle">@geo.mundoinvertido</p>
+            </div>
+          </div>
+
+          <p class="insta-desc">
+            Acompanhe os bastidores, novidades dos nichos e mais conteúdos de divulgação científica no nosso Instagram.
+          </p>
+
+          <a href="https://www.instagram.com/geo.mundoinvertido" target="_blank" class="btn-instagram">
+            Seguir no Instagram
+          </a>
+
+        </div>
+      </section>
     </div>
-  </section>
-</div>
 
 
-</div><!-- /main-content -->
+  </div><!-- /main-content -->
 
-<!-- ══ FOOTER ══ -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="logo-footer">GeoNicho</div>
-      <p>Projeto de extensão · Curso de Geografia · UFAL</p>
-      <p>Desenvolvido por estudantes do curso de Geografia</p>
-      <p><a href="mapadosite.html">Mapa do Site</a></p>
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="logo-footer">GeoNicho</div>
+        <p>Projeto de extensão · Curso de Geografia · UFAL</p>
+        <p>Desenvolvido por estudantes do curso de Geografia</p>
+        <p><a href="mapadosite.html">Mapa do Site</a></p>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-(function() {
-  const track  = document.getElementById('carouselTrack');
-  const dots   = document.querySelectorAll('.carousel-dot');
-  const total  = document.querySelectorAll('.carousel-slide').length;
-  let current  = 0;
-  let timer;
+  <script>
+    (function () {
+      const track = document.getElementById('carouselTrack');
+      const dots = document.querySelectorAll('.carousel-dot');
+      const total = document.querySelectorAll('.carousel-slide').length;
+      let current = 0;
+      let timer;
 
-  function goTo(idx) {
-    current = (idx + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle('active', i === current));
-  }
+      function goTo(idx) {
+        current = (idx + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      }
 
-  function next() { goTo(current + 1); }
-  function prev() { goTo(current - 1); }
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
 
-  function resetTimer() {
-    clearInterval(timer);
-    timer = setInterval(next, 7000);
-  }
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(next, 7000);
+      }
 
-  document.getElementById('nextBtn').addEventListener('click', () => { next(); resetTimer(); });
-  document.getElementById('prevBtn').addEventListener('click', () => { prev(); resetTimer(); });
-  dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); resetTimer(); }));
+      document.getElementById('nextBtn').addEventListener('click', () => { next(); resetTimer(); });
+      document.getElementById('prevBtn').addEventListener('click', () => { prev(); resetTimer(); });
+      dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); resetTimer(); }));
 
-  resetTimer();
-})();
-</script>
+      resetTimer();
+    })();
+  </script>
 </body>
+
 </html>
