@@ -342,6 +342,95 @@
   .card-curiosidade.verde .btn-saiba { color: var(--folha); }
   .card-curiosidade.azul  .btn-saiba { color: var(--ceu); }
 
+
+    /* ── NAVEGAÇÃO ENTRE NICHOS ── */
+.nav-nichos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1.5px solid var(--areia);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--terra);
+  box-shadow: 0 2px 10px rgba(106,58,31,.08);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  min-width: 0;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106,58,31,.15);
+  border-color: var(--ocre);
+}
+
+.nav-btn:active { transform: scale(.97); }
+
+.nav-btn--next { flex-direction: row-reverse; }
+
+.nav-arrow {
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  background: var(--areia);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--argila);
+  transition: background .2s, color .2s;
+}
+
+.nav-btn:hover .nav-arrow {
+  background: var(--ocre);
+  color: #fff;
+}
+
+.nav-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.nav-texto--dir {
+  text-align: right;
+}
+
+.nav-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--argila);
+}
+
+.nav-centro {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-num {
+  width: 44px; height: 44px;
+  background: var(--terra);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
   /* ── EXPLORE OUTROS NICHOS ── */
   .section-explore {
     position: relative;
@@ -633,7 +722,7 @@
     }
 
 .divider-curiosidades {
-      margin-top: -19px;
+      margin-top: 19px;
     }    
 
     /* Dá um respiro pro primeiro divisor não colar muito no topo */
@@ -684,7 +773,7 @@
         <div class="play-btn" onclick="abrirVideo()">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
-        <p class="video-caption">Escrever a descrição do vídeo</p>
+        <p class="video-caption"></p>
       </div>
 
       <!-- Embed do YouTube — substitua o ID do vídeo na URL abaixo -->
@@ -718,17 +807,17 @@
 
       <div class="card-curiosidade">
         <h3>RESUMO</h3>
-       <p style="text-align: justify;">A História do Pensamento Geográfico mostra como a Geografia evoluiu de um conhecimento voltado à sobrevivência para uma ciência essencial na compreensão do mundo.</p>
-       <br>
-<p style="text-align: justify;">Foram apresentados importantes pensadores e foram organizados de acordo com os principais períodos e correntes da Geografia. Cada autor representava uma contribuição importante para a construção do conhecimento geográfico ao longo do tempo.</p>
+       <p style="text-align: justify;">O Nicho 4 mergulha no universo da Cartografia e Topografia, revelando como as técnicas de medição da Terra evoluíram de métodos analógicos e manuais até a precisão tecnológica contemporânea.</p>
 <br>
-<p style="text-align: justify;">Na apresentação do vídeo, é destacando a evolução da Geografia desde o período Paleolítico até a contemporaneidade. Inicialmente, mostrou-se como os seres humanos utilizavam conhecimentos espaciais para sobrevivência, através da observação da natureza, da mobilidade e do reconhecimento de territórios (Geografia Clássica).</p>
+       <p style="text-align: justify;">Em exibição, instrumentos históricos como o teodolito, o altímetro e o clinômetro contam, por si só, a história da cartografia sistemática. Cada equipamento carrega uma contribuição essencial para o mapeamento do território, mostrando o rigor científico que sustentou séculos de exploração e registro do espaço.</p>
 <br>
-<p style="text-align: justify;">Também foram discutidas as mudanças ocorridas no século XX, como a Geografia Quantitativa e a Geografia Crítica, mostrando a importância da Geografia para compreender as relações entre sociedade, natureza e espaço geográfico na atualidade.</p>
+<p style="text-align: justify;">O acervo conduz o visitante por uma jornada fascinante: do trabalho de campo tradicional, com instrumentos físicos pesados, cadernetas e cálculos complexos baseados em princípios como a variação da pressão do ar, até a chegada dos satélites e sistemas GPS, que realizam em minutos o que antes exigia dias de esforço.</p>
+<br>
+<p style="text-align: justify;">A grande revelação do nicho, porém, é perceber que a tecnologia mudou, mas a base científica e matemática por trás da representação do espaço geográfico continua exatamente a mesma. O que mudou foi a ferramenta. O raciocínio que a faz funcionar é o mesmo de sempre. </p>
 </div>
 
-    <!--
-  Divisor 
+  
+  <!-- Divisor -->
   <div class="divider-curiosidades">
     <div class="divider-line"></div>
     <span class="divider-icon">
@@ -756,28 +845,59 @@
     <div class="cards-grid">
 
       <div class="card-curiosidade" data-num="01">
-        <div class="card-tag">🪨 Pedologia</div>
-        <h3>O solo leva séculos para se formar</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pretium maximus finibus. Donec tincidunt erat in ultricies fermentum, in volutpat dui accumsan.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Paralelos e Meridianos</div>
+        <h3>A Linha invisível mais disputada da história cartográfica</h3>
+        <p style="text-align: justify;">A Latitude (Equador) é dada pela natureza, baseada no eixo de rotação da Terra. Mas a Longitude zero é uma linha topográfica imaginária e totalmente arbitrária. Até o final do século XIX, cada país usava o seu próprio meridiano central para seus mapas (a França usava Paris, o Brasil usava o Rio de Janeiro). O Meridiano de Greenwich só virou o padrão mundial em 1884, na Conferência Internacional do Meridiano, após intensa pressão diplomática do Império Britânico, que dominava a navegação comercial. A França se recusou a usar Greenwich até 1911.</p>
+        <button class="btn-saiba" onclick="window.open('https://cesad.ufs.br/ORBI/public/uploadCatalago/11374516022012Cartografia_B%C3%A1sica_aula_2.pdf')">Aprofundar leitura →</button>
       </div>
 
       <div class="card-curiosidade verde" data-num="02">
-        <div class="card-tag">🌿 BioGeografia</div>
-        <h3>A distribuição dos seres vivos conta a história do relevo</h3>
-        <p>Maecenas non purus ut sapien rhoncus pharetra sit amet id leo. Nunc ac nisl dictum, commodo leo nec, convallis ante. Quisque pulvinar venenatis hendrerit.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Topografia</div>
+        <h3>O Everest foi "escalado" primeiro pelos teodolitos</h3>
+        <p style="text-align: justify;">A topografia não exige que você esteja no cume para saber a altura dele. Em 1852, o matemático indiano Radhanath Sikdar foi o primeiro a identificar que o "Pico XV" no Himalaia era a montanha mais alta do mundo. Ele fez isso trabalhando no Grande Levantamento Trigonométrico da Índia, calculando a altitude a mais de 240 km de distância do monte, usando apenas teodolitos gigantes e trigonometria pura, provando o poder absoluto da tabulação e análise de dados no trabalho topográfico. Em 2020, China e Nepal anunciaram conjuntamente a medição mais precisa já feita e atestou uma altura de 8.848,86 metros.</p>
+        <button class="btn-saiba" onclick="window.open('https://www.nationalgeographicbrasil.com/ciencia/2021/02/monte-everest-esta-quase-um-metro-mais-alto-segundo-china-e-nepal?utm_source=chatgpt.com')">Aprofundar leitura →</button>
       </div>
 
       <div class="card-curiosidade azul" data-num="03">
-        <div class="card-tag">🗺️ Geologia</div>
-        <h3>Rochas guardam registros de milhões de anos</h3>
-        <p>Proin scelerisque tellus sed euismod rhoncus. Donec mi lectus, viverra et porttitor at, ultricies vel ligula. Cras efficitur turpis justo, eget eleifend sem tempus sed.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Projeções cartográficas</div>
+        <h3>Todo mapa do mundo que você já viu está errado</h3>
+        <p style="text-align: justify;">Nenhum mapa é neutro; toda projeção cartográfica é uma escolha matemática com consequências políticas. A Projeção de Mercator, criada em 1569 para facilitar a navegação europeia, distorce severamente o tamanho dos continentes perto dos polos. O resultado é um mapa onde a Groenlândia parece do tamanho da África, quando, na realidade, a África é cerca de 14 vezes maior.</p>
+        <button class="btn-saiba" onclick="window.open('https://atlasescolar.ibge.gov.br/cartografia/21733-as-projecoes-cartograficas.html')">Aprofundar leitura →</button>
       </div>
 
     </div>
-  </section> -->
+  </section>
+
+  <div class="divider" style="margin-bottom: -10px;"></div>
+
+  <!-- ══ NAVEGAÇÃO ENTRE NICHOS ══ -->
+<nav class="nav-nichos" aria-label="Navegar entre nichos">
+  <a href="nicho_3_ensino_cientifico.html" class="nav-btn nav-btn--prev">
+    <span class="nav-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </span>
+    <span class="nav-texto">
+      <span class="nav-label">Nicho anterior</span>
+    </span>
+  </a>
+
+  <div class="nav-centro">
+    <div class="nav-num">04</div>
+  </div>
+
+  <a href="nicho_5_economica.html" class="nav-btn nav-btn--next">
+    <span class="nav-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </span>
+        <span class="nav-texto nav-texto--dir">
+      <span class="nav-label">Próximo nicho</span>
+    </span>
+  </a>
+</nav>
 
   <!-- Divisor -->
 <div class="divider">

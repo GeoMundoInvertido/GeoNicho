@@ -342,6 +342,95 @@
   .card-curiosidade.verde .btn-saiba { color: var(--folha); }
   .card-curiosidade.azul  .btn-saiba { color: var(--ceu); }
 
+
+    /* ── NAVEGAÇÃO ENTRE NICHOS ── */
+.nav-nichos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1.5px solid var(--areia);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--terra);
+  box-shadow: 0 2px 10px rgba(106,58,31,.08);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  min-width: 0;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106,58,31,.15);
+  border-color: var(--ocre);
+}
+
+.nav-btn:active { transform: scale(.97); }
+
+.nav-btn--next { flex-direction: row-reverse; }
+
+.nav-arrow {
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  background: var(--areia);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--argila);
+  transition: background .2s, color .2s;
+}
+
+.nav-btn:hover .nav-arrow {
+  background: var(--ocre);
+  color: #fff;
+}
+
+.nav-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.nav-texto--dir {
+  text-align: right;
+}
+
+.nav-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--argila);
+}
+
+.nav-centro {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-num {
+  width: 44px; height: 44px;
+  background: var(--terra);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
   /* ── EXPLORE OUTROS NICHOS ── */
   .section-explore {
     position: relative;
@@ -633,7 +722,7 @@
     }
 
 .divider-curiosidades {
-      margin-top: -19px;
+      margin-top: 19px;
     }    
 
     /* Dá um respiro pro primeiro divisor não colar muito no topo */
@@ -684,7 +773,7 @@
         <div class="play-btn" onclick="abrirVideo()">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
-        <p class="video-caption">Escrever a descrição do vídeo</p>
+        <p class="video-caption"></p>
       </div>
 
       <!-- Embed do YouTube — substitua o ID do vídeo na URL abaixo -->
@@ -718,17 +807,15 @@
 
       <div class="card-curiosidade">
         <h3>RESUMO</h3>
-       <p style="text-align: justify;">A História do Pensamento Geográfico mostra como a Geografia evoluiu de um conhecimento voltado à sobrevivência para uma ciência essencial na compreensão do mundo.</p>
-       <br>
-<p style="text-align: justify;">Foram apresentados importantes pensadores e foram organizados de acordo com os principais períodos e correntes da Geografia. Cada autor representava uma contribuição importante para a construção do conhecimento geográfico ao longo do tempo.</p>
+       <p style="text-align: justify;">O Nicho 5 mergulha no universo da Geografia Econômica e da Formação Territorial do Brasil, revelando como a extensão continental do país foi moldada, palmo a palmo, pela lógica da exploração econômica desde o século XV.</p>
 <br>
-<p style="text-align: justify;">Na apresentação do vídeo, é destacando a evolução da Geografia desde o período Paleolítico até a contemporaneidade. Inicialmente, mostrou-se como os seres humanos utilizavam conhecimentos espaciais para sobrevivência, através da observação da natureza, da mobilidade e do reconhecimento de territórios (Geografia Clássica).</p>
+       <p style="text-align: justify;">Marcos como o Tratado de Tordesilhas e os grandes ciclos regionais mostram que as fronteiras brasileiras não foram traçadas por acaso. Cada ciclo redesenhou o mapa, empurrou a ocupação para o interior e deixou marcas profundas na organização do espaço que persistem até hoje.</p>
 <br>
-<p style="text-align: justify;">Também foram discutidas as mudanças ocorridas no século XX, como a Geografia Quantitativa e a Geografia Crítica, mostrando a importância da Geografia para compreender as relações entre sociedade, natureza e espaço geográfico na atualidade.</p>
+       <p style="text-align: justify;">O nicho conduz o visitante por uma jornada que começa na estreita faixa litorânea dos primeiros séculos coloniais e avança rumo ao interior: da relação inicial com os povos originários e do extrativismo predatório até a consolidação de grandes complexos agrícolas e mineradores que redefiniram o território.</p>
 </div>
 
-    <!--
-  Divisor 
+    
+  <!-- Divisor -->
   <div class="divider-curiosidades">
     <div class="divider-line"></div>
     <span class="divider-icon">
@@ -756,28 +843,59 @@
     <div class="cards-grid">
 
       <div class="card-curiosidade" data-num="01">
-        <div class="card-tag">🪨 Pedologia</div>
-        <h3>O solo leva séculos para se formar</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pretium maximus finibus. Donec tincidunt erat in ultricies fermentum, in volutpat dui accumsan.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Formação Econômica do Brasil</div>
+        <h3>A utopia industrial engolida pela floresta</h3>
+        <p style="text-align: justify;">Na década de 1920, o empresário Henry Ford tentou garantir o fornecimento de borracha para sua indústria automobilística criando uma grande plantação de seringueiras na Amazônia. Para isso, fundou uma cidade planejada chamada Fordlândia, inspirada no modelo industrial norte-americano. O projeto fracassou porque desconsiderou as características naturais da floresta. As seringueiras foram plantadas muito próximas umas das outras, facilitando a rápida disseminação de fungos e pragas que devastaram a produção. Na natureza, essas árvores crescem mais espaçadas, o que reduz esse problema. Fordlândia tornou-se um exemplo clássico da importância do conhecimento geográfico no planejamento territorial, mostrando que compreender as características do ambiente é essencial para o sucesso de qualquer empreendimento.
       </div>
 
       <div class="card-curiosidade verde" data-num="02">
-        <div class="card-tag">🌿 BioGeografia</div>
-        <h3>A distribuição dos seres vivos conta a história do relevo</h3>
-        <p>Maecenas non purus ut sapien rhoncus pharetra sit amet id leo. Nunc ac nisl dictum, commodo leo nec, convallis ante. Quisque pulvinar venenatis hendrerit.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Formação Econômica do Brasil</div>
+        <h3>Como a busca por lucro (e não a bravura) criou as fronteiras do Brasil</h3>
+        <p style="text-align: justify;">Muitas vezes romantizados como heróis desbravadores, os Bandeirantes foram, na verdade, os primeiros agentes da acumulação de capital no território. A expansão geográfica de São Paulo para o interior não foi movida por um espírito explorador inocente, mas sim por interesses estritamente econômicos: a captura e escravização de populações indígenas (o "ouro vermelho") para o trabalho agrícola e, mais tarde, a busca voraz por metais preciosos. O mapa do Brasil foi alargado com muita violência econômica.</p>
+        <button class="btn-saiba" onclick="window.open('https://www.nationalgeographicbrasil.com/historia/2023/01/herois-ou-viloes-no-aniversario-de-sao-paulo-entenda-quem-foram-os-bandeirantes')">Aprofundar leitura →</button>
       </div>
 
       <div class="card-curiosidade azul" data-num="03">
-        <div class="card-tag">🗺️ Geologia</div>
-        <h3>Rochas guardam registros de milhões de anos</h3>
-        <p>Proin scelerisque tellus sed euismod rhoncus. Donec mi lectus, viverra et porttitor at, ultricies vel ligula. Cras efficitur turpis justo, eget eleifend sem tempus sed.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Geografia Econômica</div>
+        <h3>Shenzhen: De vila de pescadores a megalópole</h3>
+        <p style="text-align: justify;">Em 1980, o líder chinês Deng Xiaoping queria testar o capitalismo, mas tinha medo de "contaminar" o país comunista inteiro. A solução geográfica? Criar as Zonas Econômicas Especiais (ZEEs) no litoral. Shenzhen foi o grande experimento: uma vila de cerca de 30 mil pescadores que, ao receber isenção de impostos e leis trabalhistas flexíveis para atrair indústrias estrangeiras, explodiu demograficamente. Hoje, pouco mais de 40 anos depois, Shenzhen é o "Vale do Silício" do hardware mundial e abriga mais de 12 milhões de pessoas. É a urbanização mais rápida e agressiva já registrada na história da humanidade.</p>
+        <button class="btn-saiba" onclick="window.open('https://www.bbc.com/portuguese/internacional-55989290')">Aprofundar leitura →</button>
       </div>
 
     </div>
-  </section> -->
+  </section>
+
+
+  <div class="divider" style="margin-bottom: -10px;"></div>
+
+  <!-- ══ NAVEGAÇÃO ENTRE NICHOS ══ -->
+<nav class="nav-nichos" aria-label="Navegar entre nichos">
+  <a href="nicho_4_carto_topo.html" class="nav-btn nav-btn--prev">
+    <span class="nav-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </span>
+    <span class="nav-texto">
+      <span class="nav-label">Nicho anterior</span>
+    </span>
+  </a>
+
+  <div class="nav-centro">
+    <div class="nav-num">05</div>
+  </div>
+
+  <a href="nicho_6_urbana_alagoas.html" class="nav-btn nav-btn--next">
+    <span class="nav-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </span>
+        <span class="nav-texto nav-texto--dir">
+      <span class="nav-label">Próximo nicho</span>
+    </span>
+  </a>
+</nav>
 
   <!-- Divisor -->
 <div class="divider">

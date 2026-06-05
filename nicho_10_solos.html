@@ -342,6 +342,95 @@
   .card-curiosidade.verde .btn-saiba { color: var(--folha); }
   .card-curiosidade.azul  .btn-saiba { color: var(--ceu); }
 
+
+    /* ── NAVEGAÇÃO ENTRE NICHOS ── */
+.nav-nichos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1.5px solid var(--areia);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--terra);
+  box-shadow: 0 2px 10px rgba(106,58,31,.08);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  min-width: 0;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106,58,31,.15);
+  border-color: var(--ocre);
+}
+
+.nav-btn:active { transform: scale(.97); }
+
+.nav-btn--next { flex-direction: row-reverse; }
+
+.nav-arrow {
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  background: var(--areia);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--argila);
+  transition: background .2s, color .2s;
+}
+
+.nav-btn:hover .nav-arrow {
+  background: var(--ocre);
+  color: #fff;
+}
+
+.nav-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.nav-texto--dir {
+  text-align: right;
+}
+
+.nav-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--argila);
+}
+
+.nav-centro {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-num {
+  width: 44px; height: 44px;
+  background: var(--terra);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
   /* ── EXPLORE OUTROS NICHOS ── */
   .section-explore {
     position: relative;
@@ -633,7 +722,7 @@
     }
 
 .divider-curiosidades {
-      margin-top: -19px;
+      margin-top: 19px;
     }    
 
     /* Dá um respiro pro primeiro divisor não colar muito no topo */
@@ -684,7 +773,7 @@
         <div class="play-btn" onclick="abrirVideo()">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
-        <p class="video-caption">Escrever a descrição do vídeo</p>
+        <p class="video-caption"></p>
       </div>
 
       <!-- Embed do YouTube — substitua o ID do vídeo na URL abaixo -->
@@ -718,17 +807,15 @@
 
       <div class="card-curiosidade">
         <h3>RESUMO</h3>
-<p style="text-align: justify;">O nicho de 10 foi elaborado a partir das relações entre diferentes áreas da Geografia.</p>
-<br>
-<p style="text-align: justify;">A Geografia dos solos trata da formação, evolução e classificação dos solos (pedogênese), conectando-se à geomorfologia, que estuda as formas do relevo, seu dinamismo e as origens de suas transformações. Em um aspecto mais interno, a geologia aborda a composição, estrutura e evolução da Terra, incluindo suas mudanças físicas e químicas ao longo do tempo. Por fim, a biogeografia integra essas áreas ao analisar a distribuição dos seres vivos no espaço geográfico e no tempo geológico.</p>
+<p style="text-align: justify;">A Geografia dos Solos trata da formação, evolução e classificação dos solos (pedogênese), conectando-se à Geomorfologia, que estuda as formas do relevo, seu dinamismo e as origens de suas transformações. Em um aspecto mais interno, a Geologia aborda a composição, estrutura e evolução da Terra, incluindo suas mudanças físicas e químicas ao longo do tempo. Por fim, a Biogeografia integra essas áreas ao analisar a distribuição dos seres vivos no espaço geográfico e no tempo geológico.</p>
 <br>
 <p style="text-align: justify;">O nicho é composto por um perfil de solo que apresenta vegetação na camada superficial e organismos distribuídos conforme seus horizontes, além de amostras de rochas, um quadro de fundo representando o relevo e uma balança que simboliza a mensuração das amostras.</p>
 </div>
 
 
 
-    <!--
-  Divisor 
+    
+  <!-- Divisor --> 
   <div class="divider-curiosidades">
     <div class="divider-line"></div>
     <span class="divider-icon">
@@ -756,29 +843,55 @@
     <div class="cards-grid">
 
       <div class="card-curiosidade" data-num="01">
-        <div class="card-tag">🪨 Pedologia</div>
-        <h3>O solo leva séculos para se formar</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pretium maximus finibus. Donec tincidunt erat in ultricies fermentum, in volutpat dui accumsan.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Dinâmica dos biomas</div>
+        <h3>Quando a Amazônia quase virou uma Savana</h3>
+        <p style="text-align: justify;">Como explicar que a Amazônia, uma floresta tropical contínua, tenha uma biodiversidade tão absurdamente fragmentada e rica? O geógrafo brasileiro Aziz Ab'Sáber, junto com o biólogo Jürgen Haffer, propôs a Teoria dos Refúgios Quaternários. Ao analisar dados geomorfológicos e paleoclimáticos, eles provaram que durante as eras glaciais do Pleistoceno, o clima global ficou muito mais seco. A floresta amazônica não sumiu, mas encolheu, transformando-se em "ilhas de floresta" isoladas (os refúgios) cercadas por savanas e caatingas. Isoladas nessas ilhas por milhares de anos, as espécies evoluíram de forma diferente. Quando o clima úmido voltou e a floresta se expandiu novamente unificando o território, essas novas espécies se misturaram, gerando a megabiodiversidade atual.</p>
+        <button class="btn-saiba" onclick="window.open('https://smastr16.blob.core.windows.net/iflorestal/ifref/RIF4-1/RIF4-1_29-34.pdf')">Aprofundar leitura →</button>
       </div>
 
       <div class="card-curiosidade verde" data-num="02">
-        <div class="card-tag">🌿 BioGeografia</div>
-        <h3>A distribuição dos seres vivos conta a história do relevo</h3>
-        <p>Maecenas non purus ut sapien rhoncus pharetra sit amet id leo. Nunc ac nisl dictum, commodo leo nec, convallis ante. Quisque pulvinar venenatis hendrerit.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Antropossolo</div>
+        <h3>O solo que reescreveu a história da Amazônia</h3>
+        <p style="text-align: justify;">Por décadas, cientistas baseados apenas em dados de laboratório afirmavam que os solos da Amazônia eram quase inteiramente pobres, ácidos e lixiviados (Latossolos), incapazes de sustentar grandes civilizações agrícolas. A curiosidade científica mudou quando geógrafos e arqueólogos foram a campo e mapearam manchas de um solo extremamente escuro e incrivelmente fértil, batizado de Terra Preta de Índio (TPI). A análise geoquímica revelou que esse solo não é natural: trata-se de um antropossolo, criado por populações pré-colombianas há milhares de anos através da queima controlada de biomassa (biocarvão), restos de alimentos, ossos e cerâmicas. Essa descoberta provou que a floresta já foi densamente povoada e manejada por sociedades complexas.</p>
+        <button class="btn-saiba" onclick="window.open('https://jornal.usp.br/ciencias/adubo-pre-historico-foi-planejado-por-indigenas-da-amazonia-no-passado/')">Aprofundar leitura →</button>
       </div>
 
       <div class="card-curiosidade azul" data-num="03">
-        <div class="card-tag">🗺️ Geologia</div>
-        <h3>Rochas guardam registros de milhões de anos</h3>
-        <p>Proin scelerisque tellus sed euismod rhoncus. Donec mi lectus, viverra et porttitor at, ultricies vel ligula. Cras efficitur turpis justo, eget eleifend sem tempus sed.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Biogeografia</div>
+        <h3>O Grande Intercâmbio Biótico Americano</h3>
+        <p style="text-align: justify;">Durante milhões de anos, a América do Sul foi um "continente ilha" isolado (assim como a Austrália é hoje), repleto de animais endêmicos bizarros, como preguiças-gigantes, tatús do tamanho de carros e aves predadoras gigantes conhecidas como "aves do terror". Há cerca de 3 milhões de anos, a movimentação tectônica e a atividade vulcânica criaram o Isthmo do Panamá, unindo a América do Norte à América do Sul. Esse evento geológico causou o Grande Intercâmbio Biótico Americano (GABI). Mamíferos placentários do norte (como felinos, ursos e camelídeos) migraram para o sul, enquanto os marsupiais do sul migraram para o norte. A competição ecológica gerada por essa união de terras mudou para sempre a biogeografia do continente, extinguindo a maior parte da fauna nativa sul-americana.</p>
+        <button class="btn-saiba" onclick="window.open('https://igeo.ufrj.br/2020/11/17/encontro-entre-dois-continentes-o-grande-intercambio-biotico-das-americas/')">Aprofundar leitura →</button>
       </div>
 
     </div>
-  </section> -->
+  </section>
 
+
+    <div class="divider" style="margin-bottom: -10px;"></div>
+
+  <!-- ══ NAVEGAÇÃO ENTRE NICHOS ══ -->
+<nav class="nav-nichos" aria-label="Navegar entre nichos">
+
+  <a href="nicho_9_quant.html" class="nav-btn nav-btn--prev">
+    <span class="nav-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </span>
+    <span class="nav-texto">
+      <span class="nav-label">Nicho anterior</span>
+    </span>
+  </a>
+
+  <div class="nav-centro">
+    <div class="nav-num">10</div>
+  </div>
+
+    <!-- Botão fantasma — ocupa espaço mas é invisível -->
+  <div class="nav-btn" style="visibility: hidden; pointer-events: none;"></div>
+
+
+</nav>
   <!-- Divisor -->
 <div class="divider">
       <div class="divider-line"></div>

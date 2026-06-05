@@ -342,6 +342,95 @@
   .card-curiosidade.verde .btn-saiba { color: var(--folha); }
   .card-curiosidade.azul  .btn-saiba { color: var(--ceu); }
 
+
+    /* ── NAVEGAÇÃO ENTRE NICHOS ── */
+.nav-nichos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1.5px solid var(--areia);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--terra);
+  box-shadow: 0 2px 10px rgba(106,58,31,.08);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  min-width: 0;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106,58,31,.15);
+  border-color: var(--ocre);
+}
+
+.nav-btn:active { transform: scale(.97); }
+
+.nav-btn--next { flex-direction: row-reverse; }
+
+.nav-arrow {
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  background: var(--areia);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--argila);
+  transition: background .2s, color .2s;
+}
+
+.nav-btn:hover .nav-arrow {
+  background: var(--ocre);
+  color: #fff;
+}
+
+.nav-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.nav-texto--dir {
+  text-align: right;
+}
+
+.nav-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--argila);
+}
+
+.nav-centro {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-num {
+  width: 44px; height: 44px;
+  background: var(--terra);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
   /* ── EXPLORE OUTROS NICHOS ── */
   .section-explore {
     position: relative;
@@ -633,7 +722,7 @@
     }
 
 .divider-curiosidades {
-      margin-top: -19px;
+      margin-top: 19px;
     }    
 
     /* Dá um respiro pro primeiro divisor não colar muito no topo */
@@ -684,7 +773,7 @@
         <div class="play-btn" onclick="abrirVideo()">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
-        <p class="video-caption">Escrever a descrição do vídeo</p>
+        <p class="video-caption"></p>
       </div>
 
       <!-- Embed do YouTube — substitua o ID do vídeo na URL abaixo -->
@@ -723,8 +812,8 @@
 <p style="text-align: justify;">Como resultado, a iniciativa consolida-se como uma valiosa ferramenta de extensão universitária e ensino. Ao traduzir teorias abstratas em experiências táteis, o projeto enriquece a formação dos graduandos e atua como um potente recurso didático para despertar o interesse científico na comunidade.</p>
 </div>
 
-    <!--
-  Divisor 
+    
+  <!-- Divisor -->
   <div class="divider-curiosidades">
     <div class="divider-line"></div>
     <span class="divider-icon">
@@ -752,28 +841,60 @@
     <div class="cards-grid">
 
       <div class="card-curiosidade" data-num="01">
-        <div class="card-tag">🪨 Pedologia</div>
-        <h3>O solo leva séculos para se formar</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pretium maximus finibus. Donec tincidunt erat in ultricies fermentum, in volutpat dui accumsan.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Climatologia</div>
+        <h3>O El Niño não é um fenômeno novo</h3>
+        <p style="text-align: justify;">O fenômeno climático que aquece as águas do Pacífico equatorial e desregula o clima de todo o planeta ganhou esse nome ("El Niño", em referência ao menino Jesus) porque os pescadores do Peru percebiam que o aquecimento anômalo do oceano ocorria por volta do Natal. O que parecia uma observação local se revelou um dos sistemas climáticos mais poderosos do mundo: capaz de provocar secas severas no Nordeste brasileiro, chuvas intensas no Sul, quebras de safra na Austrália e inundações no Peru simultaneamente. A ciência climática só formalizou sua dinâmica nos anos 1960.</p>
+        <button class="btn-saiba" onclick="window.open('https://www.nationalgeographicbrasil.com/meio-ambiente/2023/05/o-que-e-o-el-nino-fenomeno-deve-causar-recordes-de-calor-nos-proximos-anos')">Aprofundar leitura →</button>
       </div>
 
       <div class="card-curiosidade verde" data-num="02">
-        <div class="card-tag">🌿 BioGeografia</div>
-        <h3>A distribuição dos seres vivos conta a história do relevo</h3>
-        <p>Maecenas non purus ut sapien rhoncus pharetra sit amet id leo. Nunc ac nisl dictum, commodo leo nec, convallis ante. Quisque pulvinar venenatis hendrerit.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Geomorfologia</div>
+        <h3>As montanhas continuam crescendo</h3>
+        <p style="text-align: justify;">A geomorfologia demonstra que o relevo terrestre é um sistema dinâmico em equilíbrio instável: enquanto forças internas (tectônica de placas, vulcanismo) erguem o terreno, forças externas (erosão hídrica, eólica, glacial) trabalham incessantemente para destruí-lo. O Himalaia, por exemplo, cresce cerca de 5 mm por ano devido à colisão entre as placas Indiana e Euroasiática. Já o Planalto Brasileiro, muito mais antigo, está em franco processo de aplanamento: suas serras e chapadas são resquícios de uma superfície muito mais elevada que existiu há milhões de anos.</p>
+        <button class="btn-saiba" onclick="window.open('https://oglobo.globo.com/mundo/epoca/noticia/2025/01/26/monte-everest-e-outras-montanhas-estao-crescendo-veja-o-motivo.ghtml')">Aprofundar leitura →</button>
       </div>
 
       <div class="card-curiosidade azul" data-num="03">
-        <div class="card-tag">🗺️ Geologia</div>
-        <h3>Rochas guardam registros de milhões de anos</h3>
-        <p>Proin scelerisque tellus sed euismod rhoncus. Donec mi lectus, viverra et porttitor at, ultricies vel ligula. Cras efficitur turpis justo, eget eleifend sem tempus sed.</p>
-        <button class="btn-saiba">Aprofundar leitura →</button>
+        <div class="card-tag">Hidrografia</div>
+        <h3>Cerca de 97% da água da Terra é salgada e inutilizável para consumo</h3>
+        <p style="text-align: justify;">De toda a água existente no planeta, cerca de 3% é doce. Desse total, cerca de 69% está presa nas geleiras e calotas polares, 30% está em aquíferos subterrâneos profundos e menos de 1% compõe rios, lagos e reservatórios superficiais, a única fração diretamente acessível à humanidade. O Brasil detém cerca de 12% de toda a água doce superficial do mundo, mas essa abundância é geograficamente concentrada: 80% está na bacia amazônica, onde vive menos de 5% da população brasileira.</p>
+        <button class="btn-saiba" onclick="window.open('https://conselhonacionaldaagua.weebly.com/aacutegua-no-planeta-terra.html')">Aprofundar leitura →</button>
       </div>
 
     </div>
-  </section> -->
+  </section> 
+
+
+  <div class="divider" style="margin-bottom: -10px;"></div>
+
+  <!-- ══ NAVEGAÇÃO ENTRE NICHOS ══ -->
+<nav class="nav-nichos" aria-label="Navegar entre nichos">
+  <a href="nicho_7_pesquisa.html" class="nav-btn nav-btn--prev">
+    <span class="nav-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </span>
+    <span class="nav-texto">
+      <span class="nav-label">Nicho anterior</span>
+    </span>
+  </a>
+
+  <div class="nav-centro">
+    <div class="nav-num">08</div>
+  </div>
+
+  <a href="nicho_9_quant.html" class="nav-btn nav-btn--next">
+    <span class="nav-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </span>
+        <span class="nav-texto nav-texto--dir">
+      <span class="nav-label">Próximo nicho</span>
+    </span>
+  </a>
+</nav>
 
   <!-- Divisor -->
 <div class="divider">
